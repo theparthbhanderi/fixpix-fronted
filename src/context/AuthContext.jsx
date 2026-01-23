@@ -11,47 +11,61 @@ export const AuthProvider = ({ children }) => {
     let [loading, setLoading] = useState(true);
 
     const loginUser = async (username, password) => {
-        const response = await fetch(apiEndpoints.token, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 'username': username, 'password': password })
-        });
-        const data = await response.json();
+        try {
+            console.log("Attempting login to:", apiEndpoints.token);
+            const response = await fetch(apiEndpoints.token, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'username': username, 'password': password })
+            });
+            const data = await response.json();
 
-        if (response.status === 200) {
-            setAuthTokens(data);
-            // Decode SimpleJWT token payload
-            const userPayload = JSON.parse(atob(data.access.split('.')[1]));
-            setUser(userPayload);
+            if (response.status === 200) {
+                setAuthTokens(data);
+                // Decode SimpleJWT token payload
+                const userPayload = JSON.parse(atob(data.access.split('.')[1]));
+                setUser(userPayload);
 
-            localStorage.setItem('authTokens', JSON.stringify(data));
-            return true;
-        } else {
-            console.error("Login failed", data);
+                localStorage.setItem('authTokens', JSON.stringify(data));
+                return true;
+            } else {
+                console.error("Login failed", data);
+                alert("Login failed: " + (data.detail || "Invalid credentials"));
+                return false;
+            }
+        } catch (error) {
+            console.error("Login Network Error:", error);
+            alert("Connection Error: Could not reach backend at " + apiEndpoints.token);
             return false;
         }
     }
 
     const registerUser = async (username, email, password) => {
-        const response = await fetch(apiEndpoints.register, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ 'username': username, 'email': email, 'password': password })
-        });
+        try {
+            console.log("Attempting register to:", apiEndpoints.register);
+            const response = await fetch(apiEndpoints.register, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 'username': username, 'email': email, 'password': password })
+            });
 
-        if (response.status === 201) {
-            // Automatically login after register
-            await loginUser(username, password);
-            return true;
-        } else {
-            const data = await response.json();
-            console.error("Register failed", data);
-            // Return the error message if possible
-            return data;
+            if (response.status === 201) {
+                // Automatically login after register
+                await loginUser(username, password);
+                return true;
+            } else {
+                const data = await response.json();
+                console.error("Register failed", data);
+                return data;
+            }
+        } catch (error) {
+            console.error("Register Network Error:", error);
+            alert("Connection Error: Could not reach backend.");
+            return { error: "Network error", detail: "Could not connect to server" };
         }
     }
 
