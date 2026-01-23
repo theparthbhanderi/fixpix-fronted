@@ -83,7 +83,7 @@ const Navbar = () => {
                                         <Link
                                             key={link.to}
                                             to={link.to}
-                                            className="relative px-5 py-2.5 text-[15px] font-medium leading-none text-text-secondary hover:text-text-main transition-colors duration-200 group"
+                                            className="relative px-5 py-2.5 text-[15px] font-medium leading-none text-text-secondary hover:text-text-main transition-colors duration-200 group whitespace-nowrap"
                                         >
                                             {link.label}
                                             {/* Hover underline */}
@@ -93,7 +93,7 @@ const Navbar = () => {
                                         <a
                                             key={link.href}
                                             href={link.href}
-                                            className="relative px-5 py-2.5 text-[15px] font-medium leading-none text-text-secondary hover:text-text-main transition-colors duration-200 group"
+                                            className="relative px-5 py-2.5 text-[15px] font-medium leading-none text-text-secondary hover:text-text-main transition-colors duration-200 group whitespace-nowrap"
                                         >
                                             {link.label}
                                             {/* Hover underline */}
