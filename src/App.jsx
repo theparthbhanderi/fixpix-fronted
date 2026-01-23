@@ -23,6 +23,13 @@ import { ImageProvider } from './context/ImageContext';
 import GlobalErrorBoundary from './utils/GlobalErrorBoundary';
 import { ToastProvider } from './components/ui/Toast';
 
+// Admin Components
+import AdminGuard from './admin/components/AdminGuard';
+import AdminLayout from './admin/layouts/AdminLayout';
+import Dashboard from './admin/pages/Dashboard';
+import UsersPage from './admin/pages/Users';
+import JobsPage from './admin/pages/Jobs';
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -58,6 +65,22 @@ function App() {
                       <Route path="batch" element={<BatchProcessor />} />
                       <Route path="projects" element={<ProjectsPage />} />
                       <Route path="settings" element={<SettingsPage />} />
+                    </Route>
+
+                    {/* Admin Panel Routes */}
+                    <Route
+                      path="/admin"
+                      element={
+                        <AdminGuard>
+                          <AdminLayout />
+                        </AdminGuard>
+                      }
+                    >
+                      <Route index element={<Dashboard />} />
+                      <Route path="users" element={<UsersPage />} />
+                      <Route path="jobs" element={<JobsPage />} />
+                      {/* Placeholder for future specific pages */}
+                      <Route path="system" element={<Dashboard />} />
                     </Route>
                     {/* 404 Page */}
                     <Route path="*" element={<NotFoundPage />} />

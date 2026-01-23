@@ -31,6 +31,14 @@ export const apiEndpoints = {
     // AI Generation
     generateImage: `${API_URL}/api/images/generate/`,
     generationStatus: `${API_URL}/api/images/generation_status/`,
+
+    // Admin Panel
+    admin: {
+        dashboard: `${API_URL}/api/admin/dashboard/`,
+        users: `${API_URL}/api/admin/users/`,
+        userAction: (id) => `${API_URL}/api/admin/users/${id}/action/`,
+        jobs: `${API_URL}/api/admin/jobs/`,
+    }
 };
 
 // Helper to build full media URL
