@@ -34,10 +34,20 @@ const UsersPage = () => {
     };
 
     const handleAction = async (userId, action) => {
-        if (!confirm(`Are you sure you want to ${action} this user?`)) return;
+        console.log(`Attempting to ${action} user ${userId}`);
+
+        // Use native confirm or replace with custom modal later. 
+        // For debugging, we log before confirming.
+        if (!window.confirm(`Are you sure you want to ${action} this user?`)) {
+            console.log("Action cancelled by user");
+            return;
+        }
 
         try {
-            const response = await fetch(apiEndpoints.admin.userAction(userId), {
+            const url = apiEndpoints.admin.userAction(userId);
+            console.log(`Sending POST request to: ${url}`);
+
+            const response = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -46,15 +56,19 @@ const UsersPage = () => {
                 body: JSON.stringify({ action })
             });
 
+            console.log(`Response status: ${response.status}`);
+
             if (response.ok) {
                 showToast(`User ${action}ed successfully`, 'success');
                 fetchUsers();
             } else {
-                const data = await response.json();
-                showToast(data.error || 'Action failed', 'error');
+                const data = await response.json().catch(() => ({}));
+                console.error("Action error details:", data);
+                showToast(data.error || `Action failed: ${response.statusText}`, 'error');
             }
         } catch (error) {
-            showToast('Connection error', 'error');
+            console.error("Connection error:", error);
+            showToast(`Connection error: ${error.message}`, 'error');
         }
     };
 
