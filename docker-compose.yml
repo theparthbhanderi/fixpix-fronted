@@ -1,0 +1,71 @@
+# FixPix Docker Compose Configuration
+# Run: docker-compose up --build
+
+version: '3.8'
+
+services:
+  # Django Web Server
+  web:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=False
+      - SECRET_KEY=${SECRET_KEY:-your-secret-key-change-in-production}
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/fixpix
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - STORAGE_PROVIDER=local
+    volumes:
+      - media_data:/app/media
+      - static_data:/app/staticfiles
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+
+  # Celery Worker (for async image processing)
+  celery_worker:
+    build: ./backend
+    command: celery -A backend worker -l info -c 2
+    environment:
+      - DEBUG=False
+      - DATABASE_URL=postgres://postgres:postgres@db:5432/fixpix
+      - CELERY_BROKER_URL=redis://redis:6379/0
+    volumes:
+      - media_data:/app/media
+    depends_on:
+      - db
+      - redis
+    restart: unless-stopped
+
+  # PostgreSQL Database
+  db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=fixpix
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  # Redis (Celery message broker)
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+
+  # React Frontend (optional - for full stack deployment)
+  frontend:
+    build: .
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_URL=http://localhost:8000
+    depends_on:
+      - web
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  media_data:
+  static_data:
