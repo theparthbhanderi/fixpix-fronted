@@ -3,7 +3,7 @@
  */
 
 // API base URL from environment variable or fallback to localhost
-export const API_URL: string = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+export const API_URL: string = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://fixpix-backend.onrender.com' : 'http://localhost:8000');
 export const MEDIA_URL: string = API_URL;
 
 // Centralized API endpoints
