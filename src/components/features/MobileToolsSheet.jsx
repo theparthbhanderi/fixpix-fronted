@@ -524,7 +524,7 @@ const MobileToolsSheet = ({ isOpen, onClose }) => {
                             {processedImage && (
                                 <button
                                     onClick={handleDownload}
-                                    className="w-full py-4 rounded-xl bg-success text-white text-base font-semibold flex items-center justify-center gap-2 shadow-lg shadow-success/30 active:scale-[0.98]"
+                                    className="w-full py-4 rounded-2xl bg-violet-600 hover:bg-violet-500 text-white text-base font-bold flex items-center justify-center gap-2 shadow-xl shadow-violet-500/20 active:scale-[0.98] transition-all tracking-wide"
                                 >
                                     <Download className="w-5 h-5" /> Save
                                 </button>

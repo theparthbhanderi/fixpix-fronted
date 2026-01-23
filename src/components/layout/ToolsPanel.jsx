@@ -608,13 +608,13 @@ const ToolsPanel = ({ isMobile, className }) => {
                         {!isMobile && <KeyboardHint shortcut="⌘G" />}
                     </Button>
 
-                    {/* Save Button - Success */}
+                    {/* Save Button - Same style as Update but Violet */}
                     {processedImage && (
                         <Button
-                            variant="success"
+                            variant="primary"
                             size="lg"
-                            className="shadow-lg shadow-green-500/25 w-full"
-                            style={{ minHeight: isMobile ? '52px' : '48px' }}
+                            className="shadow-xl shadow-violet-500/20 w-full !bg-violet-600 hover:!bg-violet-500 !text-white !rounded-2xl !h-[52px] !font-bold tracking-wide transition-all hover:!scale-[1.02] active:!scale-[0.98]"
+                            style={{ minHeight: isMobile ? '52px' : '52px' }}
                             onClick={handleDownload}
                             data-tour="download-btn"
                         >
