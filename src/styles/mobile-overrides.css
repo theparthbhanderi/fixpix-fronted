@@ -1,0 +1,366 @@
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE OVERRIDES — 0–768px only
+   Desktop layout untouched.
+   Premium iOS-level floating capsule system.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── FOUNDATION ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    :root {
+        /* Lighter mobile shadows for perf */
+        --depth-1: 0 6px 18px rgba(0, 0, 0, 0.06);
+        --depth-2: 0 10px 25px rgba(0, 0, 0, 0.10);
+        --depth-3: 0 16px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    .dark {
+        --depth-1: 0 6px 18px rgba(0, 0, 0, 0.30);
+        --depth-2: 0 10px 25px rgba(0, 0, 0, 0.40);
+        --depth-3: 0 16px 40px rgba(0, 0, 0, 0.50);
+    }
+
+    /* iOS safe area padding */
+    html {
+        padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    /* Touch feedback — global active state */
+    button:active,
+    a:active,
+    [role="button"]:active,
+    label:active {
+        transform: scale(0.97) !important;
+        transition: transform 80ms ease !important;
+    }
+
+    /* Prevent text resize on rotate */
+    body {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    /* Smooth scrolling */
+    * {
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Reduce blur on mobile for perf */
+    .inspector-panel,
+    .floating-command-bar,
+    .zoom-hud {
+        backdrop-filter: blur(16px) saturate(120%) !important;
+        -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
+    }
+}
+
+/* ─── MOBILE HEADER — Floating Capsule Navbar ──────────────────── */
+@media (max-width: 768px) {
+    .mobile-header-bar {
+        position: sticky !important;
+        top: 0 !important;
+        z-index: 40 !important;
+        height: 56px !important;
+        margin: var(--space-4) var(--space-4) 0 var(--space-4) !important;
+        padding: 0 var(--space-4) !important;
+        border-radius: var(--radius-2xl) !important;
+        background: rgba(255, 255, 255, 0.75) !important;
+        backdrop-filter: blur(18px) saturate(140%) !important;
+        -webkit-backdrop-filter: blur(18px) saturate(140%) !important;
+        border: 1px solid rgba(0, 0, 0, 0.06) !important;
+        box-shadow: var(--depth-2) !important;
+    }
+
+    .dark .mobile-header-bar {
+        background: rgba(28, 28, 30, 0.75) !important;
+        border-color: rgba(255, 255, 255, 0.08) !important;
+        box-shadow: var(--depth-2) !important;
+    }
+
+    /* Landing page navbar — proper mobile proportions */
+    .landing-navbar>div {
+        border-radius: var(--radius-2xl) !important;
+        padding: 0 var(--space-4) !important;
+    }
+
+    /* Premium hamburger button */
+    .mobile-hamburger-btn {
+        background: transparent;
+        border: none !important;
+        box-shadow: none;
+        color: currentColor;
+        opacity: 0.85;
+        transition: opacity 120ms ease-out;
+    }
+
+    .mobile-hamburger-btn:active {
+        opacity: 1;
+        background: transparent !important;
+    }
+
+    .dark .mobile-hamburger-btn {
+        background: transparent;
+        border: none !important;
+        box-shadow: none;
+        color: currentColor;
+        opacity: 0.85;
+    }
+
+    .dark .mobile-hamburger-btn:active {
+        opacity: 1;
+        background: transparent !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .landing-navbar>div {
+        padding: 0 var(--space-6) !important;
+    }
+}
+
+/* ─── SIDEBAR DRAWER — iOS Sheet Style ─────────────────────────── */
+@media (max-width: 768px) {
+    .mobile-sidebar-drawer {
+        width: 86% !important;
+        max-width: 320px !important;
+        border-radius: 0 var(--radius-2xl) var(--radius-2xl) 0 !important;
+        margin: 0 !important;
+        top: 0 !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        background-color: var(--surface) !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.30) !important;
+        padding-bottom: env(safe-area-inset-bottom, 16px) !important;
+    }
+
+    .dark .mobile-sidebar-drawer {
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.60) !important;
+    }
+
+    .mobile-sidebar-overlay {
+        background-color: rgba(0, 0, 0, 0.25) !important;
+        backdrop-filter: blur(6px) !important;
+        -webkit-backdrop-filter: blur(6px) !important;
+    }
+}
+
+/* ─── PROJECTS PAGE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .projects-page-container {
+        padding: var(--space-4) var(--space-4) var(--space-8) !important;
+    }
+
+    .projects-page-header {
+        margin-bottom: var(--space-4) !important;
+        padding: 0 var(--space-1) !important;
+    }
+
+    .projects-page-header h1 {
+        font-size: 24px !important;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr !important;
+        gap: var(--space-4) !important;
+    }
+
+    .projects-filter-bar {
+        margin-bottom: var(--space-4) !important;
+        height: 48px !important;
+        border-radius: var(--radius-2xl) !important;
+        padding: 0 var(--space-4) !important;
+        box-shadow: var(--depth-1) !important;
+    }
+
+    .projects-empty-state {
+        margin-top: var(--space-8) !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: var(--space-8) var(--space-5) !important;
+        border-radius: var(--radius-2xl) !important;
+        box-shadow: var(--depth-1) !important;
+    }
+}
+
+/* ─── SETTINGS PAGE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .settings-page-container {
+        padding: var(--space-4) var(--space-4) var(--space-8) !important;
+    }
+
+    .settings-page-container h1 {
+        font-size: 24px !important;
+        padding: 0 var(--space-1) !important;
+    }
+
+    .settings-card {
+        padding: var(--space-4) !important;
+        border-radius: var(--radius-2xl) !important;
+        box-shadow: var(--depth-1) !important;
+    }
+
+    .settings-switch-row {
+        min-height: 52px !important;
+    }
+
+    .settings-profile-card {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: var(--space-3) !important;
+    }
+}
+
+/* ─── BATCH PAGE ───────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .batch-page-container {
+        padding: var(--space-4) var(--space-4) var(--space-8) !important;
+    }
+
+    .batch-page-container h1 {
+        font-size: 24px !important;
+    }
+
+    .batch-layout {
+        flex-direction: column !important;
+        gap: var(--space-4) !important;
+    }
+
+    .batch-panel {
+        width: 100% !important;
+        min-width: 0 !important;
+        border-radius: var(--radius-2xl) !important;
+        box-shadow: var(--depth-1) !important;
+    }
+
+    .batch-queue {
+        min-height: 240px !important;
+        max-height: 400px !important;
+        overflow-y: auto !important;
+    }
+}
+
+/* ─── EDITOR MOBILE ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+    /* Canvas floating */
+    .ios-pro-canvas {
+        border-radius: var(--radius-2xl) !important;
+        margin: var(--space-3) !important;
+        overflow: hidden !important;
+    }
+
+    .canvas-container {
+        border-radius: var(--radius-xl) !important;
+    }
+
+    /* Generate FAB safe area */
+    .mobile-generate-fab {
+        bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0)) !important;
+        left: var(--space-4) !important;
+        right: var(--space-4) !important;
+        height: 52px !important;
+        border-radius: var(--radius-xl) !important;
+        box-shadow: var(--depth-2) !important;
+    }
+
+    /* Tool sheet bottom */
+    .mobile-tool-sheet {
+        border-radius: var(--radius-2xl) var(--radius-2xl) 0 0 !important;
+        padding: var(--space-5) var(--space-4) !important;
+        padding-bottom: calc(var(--space-5) + env(safe-area-inset-bottom, 0)) !important;
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    .dark .mobile-tool-sheet {
+        box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.40) !important;
+    }
+
+    /* Mobile toolbar capsule — breathing space from bottom */
+    .mobile-capsule-toolbar {
+        margin: 0 var(--space-4) var(--space-5) var(--space-4) !important;
+        border-radius: var(--radius-xl) !important;
+        height: 44px !important;
+        box-shadow: var(--depth-1) !important;
+    }
+}
+
+/* ─── TYPOGRAPHY — Mobile scale ────────────────────────────────── */
+@media (max-width: 768px) {
+
+    h1,
+    .ios-large-title {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+    }
+
+    h2,
+    .ios-title {
+        font-size: 20px !important;
+    }
+
+    h3,
+    .ios-title3 {
+        font-size: 17px !important;
+    }
+
+    p,
+    .ios-body {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .ios-footnote,
+    .ios-caption {
+        font-size: 13px;
+    }
+}
+
+/* ─── CARDS & SURFACES — Mobile floating ───────────────────────── */
+@media (max-width: 768px) {
+
+    /* No element should touch screen edges */
+    .page-content-padded {
+        padding-left: var(--space-4) !important;
+        padding-right: var(--space-4) !important;
+    }
+
+    /* Consistent card radius + floating shadow */
+    .floating-card,
+    .project-card,
+    .settings-card,
+    .batch-card {
+        border-radius: var(--radius-2xl) !important;
+        box-shadow: var(--depth-1) !important;
+    }
+
+    /* All primary buttons — tappable floating */
+    .mobile-primary-btn {
+        height: 52px !important;
+        border-radius: var(--radius-xl) !important;
+        font-size: 15px !important;
+        font-weight: 600 !important;
+        box-shadow: var(--depth-1) !important;
+    }
+
+    /* All secondary buttons */
+    .mobile-secondary-btn {
+        height: 44px !important;
+        border-radius: var(--radius-lg) !important;
+        font-size: 14px !important;
+    }
+}
+
+/* ─── SAFE AREA — iOS notch + home indicator ───────────────────── */
+@media (max-width: 768px) {
+
+    /* Bottom fixed elements */
+    .mobile-bottom-fixed {
+        padding-bottom: calc(var(--space-4) + env(safe-area-inset-bottom, 0)) !important;
+    }
+
+    /* Top safe area for floating navbar */
+    .mobile-safe-top {
+        padding-top: env(safe-area-inset-top, 0) !important;
+    }
+}

@@ -1,0 +1,827 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import './styles/theme.css';
+@import './styles/apple-material-system.css';
+@import './styles/mobile-overrides.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* ═══════════════════════════════════════════════════════════
+     LEGACY CSS BRIDGES — Used by .ios-* CSS classes below.
+     JSX components have been fully migrated to var(--*) tokens.
+     These will be removed when the .ios-* CSS classes are refactored.
+     ═══════════════════════════════════════════════════════════ */
+  :root {
+    --ios-bg: 246 247 249;
+    --ios-bg-secondary: 255 255 255;
+    --ios-bg-tertiary: 242 242 247;
+    --ios-surface: 255 255 255;
+    --ios-surface-secondary: 246 247 249;
+    --ios-accent: 0 122 255;
+    --ios-success: 52 199 89;
+    --ios-error: 255 59 48;
+    --ios-warning: 255 149 0;
+    --ios-info: 90 200 250;
+    --ios-label: 28 28 30;
+    --ios-label-secondary: 110 110 115;
+    --ios-label-tertiary: 142 142 147;
+    --ios-label-quaternary: 174 174 178;
+    --ios-separator: 209 209 214;
+    --ios-separator-opaque: 229 229 234;
+    --ios-fill: 120 120 128;
+    --ios-gradient-hero: none;
+    --ios-gradient-accent: none;
+    --header-height: 64px;
+    --layout-gutter: 32px;
+  }
+
+  .dark {
+    --ios-bg: 14 15 17;
+    --ios-bg-secondary: 22 23 26;
+    --ios-bg-tertiary: 28 29 33;
+    --ios-surface: 22 23 26;
+    --ios-surface-secondary: 31 32 36;
+    --ios-surface-elevated: 42 43 48;
+    --ios-accent: 0 122 255;
+    --ios-label: 242 242 247;
+    --ios-label-secondary: 154 154 161;
+    --ios-label-tertiary: 110 110 115;
+    --ios-label-quaternary: 72 72 74;
+    --ios-separator: 42 43 48;
+    --ios-separator-opaque: 31 32 36;
+    --ios-fill: 120 120 128;
+    --ios-gradient-hero: none;
+    --ios-gradient-accent: none;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(var(--ios-accent), 0.3);
+  }
+
+  html {
+    height: 100%;
+    width: 100%;
+  }
+
+  body,
+  #root {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+@layer utilities {
+
+  /* ===========================================
+     Glassmorphism Utilities
+     =========================================== */
+
+  .glass-panel-floating {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(var(--blur-heavy)) saturate(160%);
+    -webkit-backdrop-filter: blur(var(--blur-heavy)) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: var(--depth-2);
+  }
+
+  .dark .glass-panel-floating {
+    background-color: rgba(25, 25, 28, 0.70);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  }
+
+  .canvas-container {
+    background-color: rgb(var(--ios-bg-secondary));
+    box-shadow: var(--depth-3);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+  }
+
+  .dark .canvas-container {
+    background-color: #111;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: 0 40px 80px -20px black;
+  }
+
+  /* ===========================================
+     iOS Gutter — Responsive horizontal padding
+     =========================================== */
+
+  .ios-gutter {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  @media (min-width: 768px) {
+    .ios-gutter {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .ios-gutter {
+      padding-left: 32px;
+      padding-right: 32px;
+    }
+  }
+
+  /* ===========================================
+     Typography Scale
+     =========================================== */
+
+  .ios-title1 {
+    font-size: 28px;
+    line-height: 1.21;
+    letter-spacing: -0.4px;
+    font-weight: 700;
+  }
+
+  .ios-title2 {
+    font-size: 22px;
+    line-height: 1.27;
+    letter-spacing: -0.3px;
+    font-weight: 700;
+  }
+
+  .ios-title3 {
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.2px;
+    font-weight: 600;
+  }
+
+  .ios-headline {
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.4px;
+    font-weight: 600;
+  }
+
+  .ios-body {
+    font-size: 17px;
+    line-height: 1.47;
+    letter-spacing: -0.4px;
+    font-weight: 400;
+  }
+
+  .ios-subhead {
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: -0.2px;
+    font-weight: 400;
+  }
+
+  .ios-footnote {
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: -0.1px;
+    font-weight: 400;
+  }
+
+  /* ===========================================
+     Card System
+     =========================================== */
+
+  .ios-card {
+    background-color: rgb(var(--ios-surface));
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow:
+      0 0 0 0.5px rgba(0, 0, 0, 0.03),
+      0 1px 2px rgba(0, 0, 0, 0.04),
+      0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .ios-card:hover {
+    transform: translateY(-2px);
+    box-shadow:
+      0 0 0 0.5px rgba(0, 0, 0, 0.03),
+      0 4px 8px rgba(0, 0, 0, 0.06),
+      0 8px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .ios-card {
+    box-shadow: var(--depth-1);
+    border: 1px solid var(--border-subtle);
+  }
+
+  .dark .ios-card:hover {
+    transform: translateY(-2px);
+    border-color: rgb(var(--ios-separator) / 0.25);
+    background-color: rgb(var(--ios-surface-secondary));
+  }
+
+  .ios-card-elevated {
+    background-color: rgb(var(--ios-surface));
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .ios-card-elevated:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+      0 4px 8px rgba(0, 0, 0, 0.06),
+      0 16px 48px rgba(0, 0, 0, 0.12);
+  }
+
+  /* ===========================================
+     Material Card System
+     =========================================== */
+
+  .ios-material-card {
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 20px;
+    box-shadow:
+      0 0 0 0.5px rgba(0, 0, 0, 0.02),
+      0 1px 2px rgba(0, 0, 0, 0.03),
+      0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dark .ios-material-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--depth-1);
+  }
+
+  .ios-material-card:hover {
+    transform: translateY(-2px) scale(1.01);
+    box-shadow:
+      0 0 0 0.5px rgba(0, 0, 0, 0.03),
+      0 4px 8px rgba(0, 0, 0, 0.04),
+      0 12px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .dark .ios-material-card:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  /* ===========================================
+     Input Label
+     =========================================== */
+
+  .ios-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(var(--ios-label-secondary) / 0.8);
+    margin-bottom: 6px;
+    margin-left: 4px;
+    letter-spacing: -0.1px;
+  }
+
+  /* ===========================================
+     Chip System
+     =========================================== */
+
+  .ios-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    border-radius: 6px;
+    background-color: rgba(0, 0, 0, 0.04);
+    color: rgb(var(--ios-label-tertiary));
+    border: 1px solid transparent;
+  }
+
+  .dark .ios-chip {
+    background-color: rgba(255, 255, 255, 0.08);
+    color: rgb(var(--ios-label-secondary));
+  }
+
+  /* ===========================================
+     Glass Panel
+     =========================================== */
+
+  .glass-panel {
+    background-color: rgb(var(--ios-surface) / 0.7);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border: 1px solid rgb(var(--ios-separator) / 0.2);
+  }
+
+  .dark .glass-panel {
+    background-color: rgb(28 28 30 / 0.95);
+    border: 1px solid rgb(255 255 255 / 0.1);
+  }
+
+  /* ===========================================
+     Interaction Utilities
+     =========================================== */
+
+  .ios-press {
+    transition: transform 0.15s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .ios-press:active {
+    transform: scale(0.97);
+  }
+
+  .ios-press-scale {
+    transition: transform 0.1s cubic-bezier(0.25, 0.1, 0.25, 1);
+  }
+
+  .ios-press-scale:active {
+    transform: scale(0.97);
+  }
+
+  /* Mobile Background */
+  .ios-mobile-bg {
+    background-color: rgb(var(--ios-bg));
+  }
+}
+
+/* ===========================================
+   Tour Popover (driver.js)
+   =========================================== */
+
+div.driver-popover.fixpix-tour-popover {
+  background-color: rgb(var(--ios-surface)) !important;
+  color: rgb(var(--ios-label)) !important;
+  border-radius: 16px !important;
+  padding: 20px !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 10px 40px rgba(0, 0, 0, 0.2) !important;
+}
+
+.driver-popover-title {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  line-height: 1.3 !important;
+  margin-bottom: 8px !important;
+}
+
+.driver-popover-description {
+  font-family: 'Inter', sans-serif !important;
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  color: rgb(var(--ios-label-secondary)) !important;
+  margin-bottom: 20px !important;
+}
+
+.driver-popover-footer {
+  margin-top: 0 !important;
+}
+
+.driver-popover-btn {
+  border-radius: 8px !important;
+  padding: 8px 16px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-shadow: none !important;
+  border: none !important;
+  transition: all 0.2s !important;
+}
+
+.driver-popover-next-btn {
+  background-color: rgb(var(--ios-accent)) !important;
+  color: white !important;
+}
+
+.driver-popover-next-btn:hover {
+  opacity: 0.9 !important;
+}
+
+.driver-popover-prev-btn,
+.driver-popover-close-btn {
+  background-color: rgb(var(--ios-fill) / 0.1) !important;
+  color: rgb(var(--ios-label)) !important;
+}
+
+@media (max-width: 768px) {
+  div.driver-popover.fixpix-tour-popover {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: auto !important;
+    transform: none !important;
+    width: calc(100vw - 32px) !important;
+    max-width: 340px !important;
+    height: auto !important;
+    max-height: calc(100dvh - 100px) !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box !important;
+    padding: 20px !important;
+    padding-bottom: calc(20px + env(safe-area-inset-bottom)) !important;
+    z-index: 9999999 !important;
+  }
+
+  div.driver-popover.fixpix-tour-popover .driver-popover-arrow {
+    display: none !important;
+  }
+
+  .driver-overlay {
+    z-index: 9999998 !important;
+    position: fixed !important;
+    inset: 0 !important;
+  }
+
+  body.driver-active {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+
+/* ===========================================
+   Safe Area Utilities
+   =========================================== */
+
+.h-safe-top {
+  height: env(safe-area-inset-top, 20px);
+}
+
+/* ===========================================
+   Pro Editor Styles
+   =========================================== */
+
+.ios-pro-header {
+  background: rgba(252, 252, 254, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-bottom: 0.33px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02),
+    0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.dark .ios-pro-header {
+  background: rgba(28, 28, 30, 0.88);
+  border-bottom: 0.33px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ios-pro-sheet {
+  background: linear-gradient(180deg,
+      rgba(252, 252, 254, 0.98) 0%,
+      rgba(248, 248, 250, 0.96) 100%);
+  backdrop-filter: blur(50px) saturate(200%);
+  -webkit-backdrop-filter: blur(50px) saturate(200%);
+  border-radius: 28px 28px 0 0;
+  border-top: 0.33px solid rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 -1px 0 rgba(0, 0, 0, 0.02),
+    0 -4px 20px rgba(0, 0, 0, 0.04),
+    0 -12px 48px rgba(0, 0, 0, 0.06),
+    0 -24px 80px rgba(0, 0, 0, 0.05);
+}
+
+.dark .ios-pro-sheet {
+  background: linear-gradient(180deg,
+      rgba(48, 48, 50, 0.98) 0%,
+      rgba(38, 38, 40, 0.96) 100%);
+  border-top: 0.33px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    0 -1px 0 rgba(0, 0, 0, 0.3),
+    0 -8px 32px rgba(0, 0, 0, 0.25),
+    0 -20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.ios-pro-canvas {
+  background: linear-gradient(180deg,
+      rgba(245, 245, 248, 1) 0%,
+      rgba(240, 240, 244, 1) 100%);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow:
+    inset 0 0 0 0.5px rgba(0, 0, 0, 0.03),
+    var(--depth-1);
+}
+
+.dark .ios-pro-canvas {
+  background: linear-gradient(180deg,
+      rgba(32, 32, 34, 1) 0%,
+      rgba(24, 24, 26, 1) 100%);
+  box-shadow:
+    inset 0 0 0 0.5px rgba(255, 255, 255, 0.03),
+    0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ===========================================
+   Floating Capsule Toolbar
+   =========================================== */
+
+.floating-capsule {
+  background: linear-gradient(135deg,
+      rgba(40, 40, 45, 0.90) 0%,
+      rgba(30, 30, 35, 0.86) 100%);
+  backdrop-filter: blur(var(--blur-heavy)) saturate(180%);
+  -webkit-backdrop-filter: blur(var(--blur-heavy)) saturate(180%);
+  border-radius: 20px;
+  border: var(--border-thin) solid rgba(255, 255, 255, 0.06);
+  padding: 4px;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+:root:not(.dark) .floating-capsule {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(248, 248, 252, 0.90) 100%);
+  border: var(--border-thin) solid rgba(0, 0, 0, 0.04);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.02),
+    0 4px 12px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+:root:not(.dark) .floating-capsule button {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.floating-tool-panel {
+  background-color: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--depth-3);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.dark .floating-tool-panel {
+  background-color: rgba(24, 24, 27, 0.94);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--depth-3);
+}
+
+/* ===========================================
+   High-Contrast Capsule Icons
+   =========================================== */
+
+.capsule-icon-inactive {
+  color: rgba(60, 60, 67, 0.6) !important;
+}
+
+.dark .capsule-icon-inactive {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.capsule-label-inactive {
+  color: rgba(60, 60, 67, 0.7);
+}
+
+.dark .capsule-label-inactive {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===========================================
+   Touch Utilities
+   =========================================== */
+
+.touch-none {
+  touch-action: none;
+}
+
+.overscroll-contain {
+  overscroll-behavior: contain;
+}
+
+/* ===========================================
+   Scrollbar Styling
+   =========================================== */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* ===========================================
+   Unified Input System
+   =========================================== */
+
+.input-field {
+  width: 100%;
+  height: 48px;
+  padding: 0 var(--space-4);
+  font-size: 15px;
+  line-height: 48px;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+  background-color: var(--fill-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-field::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input-field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+  background-color: var(--fill-tertiary);
+}
+
+.input-field:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.dark .input-field {
+  background-color: var(--fill-tertiary);
+  border-color: var(--border-subtle);
+}
+
+.dark .input-field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(10, 132, 255, 0.2);
+}
+
+/* Textarea variant — same base, taller */
+.input-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--space-3) var(--space-4);
+  font-size: 15px;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: var(--text-primary);
+  background-color: var(--fill-tertiary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.input-textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.input-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+.dark .input-textarea {
+  background-color: var(--fill-tertiary);
+  border-color: var(--border-subtle);
+}
+
+/* ===========================================
+   Focus Ring — Keyboard Navigation
+   =========================================== */
+
+*:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--accent-soft);
+}
+
+/* ===========================================
+   Reduced Motion — Accessibility
+   =========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===========================================
+   Semantic Surface Classes
+   =========================================== */
+
+.surface-base {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+}
+
+.surface-elevated {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--depth-1);
+}
+
+.surface-panel {
+  background-color: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--depth-2);
+}
+
+.surface-modal {
+  background-color: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--depth-3);
+}
+
+/* ===========================================
+   Semantic Spacing Classes
+   =========================================== */
+
+/* Vertical stacks */
+.stack-sm>*+* {
+  margin-top: var(--space-2);
+}
+
+.stack-md>*+* {
+  margin-top: var(--space-4);
+}
+
+.stack-lg>*+* {
+  margin-top: var(--space-6);
+}
+
+/* Horizontal inline gaps */
+.inline-sm {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.inline-md {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.inline-lg {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+/* ===========================================
+   Page Layout Classes
+   =========================================== */
+
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px);
+}

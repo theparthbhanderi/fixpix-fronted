@@ -1,0 +1,259 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIXPIX — UNIFIED THEME SYSTEM
+   Single source of truth for all colors, surfaces, and effects.
+   Every component must reference ONLY these tokens.
+   
+   Accent: #007AFF (same in both modes)
+   Canvas: #1A1A1A (always dark)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────────────
+   LIGHT MODE
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+    /* Backgrounds — soft, airy, layered */
+    --bg-primary: #F6F7F9;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #F2F2F7;
+
+    /* Surfaces */
+    --surface: #FFFFFF;
+    --surface-secondary: #F6F7F9;
+    --surface-elevated: #FFFFFF;
+
+    /* Text */
+    --text-primary: #1C1C1E;
+    --text-secondary: #6E6E73;
+    --text-tertiary: #8E8E93;
+    --text-quaternary: #AEAEB2;
+
+    /* Borders — barely visible */
+    --border-subtle: rgba(0, 0, 0, 0.07);
+    --border-medium: rgba(0, 0, 0, 0.08);
+    --border-strong: rgba(0, 0, 0, 0.12);
+
+    /* Accent — locked, same in both modes */
+    --accent: #007AFF;
+    --accent-hover: #338FFF;
+    --accent-active: #0062CC;
+    --accent-soft: rgba(0, 122, 255, 0.12);
+    /* Accent — editor aliases */
+    --accent-primary: var(--accent);
+    --accent-primary-hover: var(--accent-hover);
+    --accent-primary-active: var(--accent-active);
+
+    /* Functional */
+    --success: #34C759;
+    --error: #FF3B30;
+    --warning: #FF9500;
+    --info: #5AC8FA;
+
+    /* Shadows — unified 3-tier depth system only */
+    --depth-1: 0 6px 20px rgba(0, 0, 0, 0.06);
+    --depth-2: 0 12px 32px rgba(0, 0, 0, 0.10);
+    --depth-3: 0 20px 50px rgba(0, 0, 0, 0.18);
+
+
+
+    /* Glass — floating surfaces only */
+    --glass-bg: rgba(255, 255, 255, 0.75);
+    --glass-bg-solid: rgba(255, 255, 255, 0.88);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-blur: blur(30px) saturate(150%);
+    --navbar-inner-highlight: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    /* Cards */
+    --card-bg: #FFFFFF;
+    --card-border: rgba(0, 0, 0, 0.07);
+
+    /* Fills — for toggle tracks, inputs etc */
+    --fill-primary: rgba(120, 120, 128, 0.16);
+    --fill-secondary: rgba(120, 120, 128, 0.08);
+    --fill-tertiary: rgba(120, 120, 128, 0.04);
+
+    /* Canvas — soft neutral surface for light mode */
+    --canvas-bg: #E7EAF0;
+    --canvas-gradient: radial-gradient(circle at 50% 40%, #F0F2F5, #E7EAF0);
+
+    /* Radius — 5-tier official scale */
+    --radius-sm: 10px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 20px;
+    --radius-2xl: 28px;
+    --radius-full: 9999px;
+
+    /* Spacing — 9-tier scale */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-7: 32px;
+    --space-8: 40px;
+    --space-9: 48px;
+
+    /* Motion — durations */
+    --duration-fast: 100ms;
+    --duration-normal: 150ms;
+    --duration-slow: 200ms;
+    --ease-out: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Motion — semantic aliases */
+    --motion-fast: 100ms;
+    --motion-base: 150ms;
+    --motion-slow: 200ms;
+    --motion-ease: cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Transition shorthands (consumed by editor) */
+    --transition-fast: 100ms ease-out;
+    --transition-normal: 150ms ease-out;
+    --transition-slow: 200ms ease-in-out;
+
+    /* Typography tracking */
+    --tracking-tight: -0.5px;
+    --tracking-normal: -0.2px;
+    --tracking-wide: 0.3px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   DARK MODE
+   ───────────────────────────────────────────────────────────────────────── */
+.dark {
+    /* Backgrounds — deep, calm, layered greys */
+    --bg-primary: #0E0F11;
+    --bg-secondary: #16171A;
+    --bg-tertiary: #1C1D21;
+
+    /* Surfaces */
+    --surface: #16171A;
+    --surface-secondary: #1F2024;
+    --surface-elevated: #262730;
+
+    /* Text */
+    --text-primary: #F2F2F7;
+    --text-secondary: #9A9AA1;
+    --text-tertiary: #6E6E73;
+    --text-quaternary: #48484A;
+
+    /* Borders */
+    --border-subtle: rgba(255, 255, 255, 0.09);
+    --border-medium: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.12);
+
+    /* Accent — same as light */
+    --accent: #007AFF;
+    --accent-hover: #338FFF;
+    --accent-active: #0062CC;
+    --accent-soft: rgba(0, 122, 255, 0.18);
+
+    /* Shadows — unified 3-tier depth system only */
+    --depth-1: 0 6px 20px rgba(0, 0, 0, 0.30);
+    --depth-2: 0 14px 40px rgba(0, 0, 0, 0.40);
+    --depth-3: 0 20px 50px rgba(0, 0, 0, 0.55);
+
+
+
+    /* Glass */
+    --glass-bg: rgba(22, 23, 26, 0.75);
+    --glass-bg-solid: rgba(22, 23, 26, 0.92);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --navbar-inner-highlight: none;
+
+    /* Cards */
+    --card-bg: #1F2024;
+    --card-border: rgba(255, 255, 255, 0.08);
+
+    /* Fills */
+    --fill-primary: rgba(120, 120, 128, 0.24);
+    --fill-secondary: rgba(120, 120, 128, 0.16);
+    --fill-tertiary: rgba(120, 120, 128, 0.08);
+
+    /* Canvas — cinematic dark gradient */
+    --canvas-bg: #15161A;
+    --canvas-gradient: radial-gradient(circle at 50% 40%, #2A2D34, #15161A);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   THEME TRANSITION — smooth, no flicker
+   ───────────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    transition: background-color 200ms ease-in-out,
+        border-color 200ms ease-in-out,
+        box-shadow 200ms ease-in-out;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   BODY DEFAULTS
+   ───────────────────────────────────────────────────────────────────────── */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+   UTILITY CLASSES — for quick use in JSX
+   ───────────────────────────────────────────────────────────────────────── */
+.text-primary {
+    color: var(--text-primary);
+}
+
+.text-secondary {
+    color: var(--text-secondary);
+}
+
+.text-tertiary {
+    color: var(--text-tertiary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.bg-primary {
+    background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+    background-color: var(--bg-secondary);
+}
+
+.bg-surface {
+    background-color: var(--surface);
+}
+
+.bg-card {
+    background-color: var(--card-bg);
+}
+
+.border-subtle {
+    border-color: var(--border-subtle);
+}
+
+.border-strong {
+    border-color: var(--border-strong);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--fill-primary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--fill-secondary);
+}

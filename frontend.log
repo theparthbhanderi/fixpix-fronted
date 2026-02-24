@@ -1,0 +1,19 @@
+
+> fixpix@0.0.0 dev
+> vite
+
+
+  VITE v7.3.0  ready in 192 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+7:11:28 PM [vite] (client) hmr update /src/pages/DashboardLayout.jsx, /src/index.css
+7:16:43 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:16:45 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:16:47 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:17:00 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:17:05 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:18:32 PM [vite] (client) hmr update /src/index.css, /src/components/layout/ToolsPanel.jsx
+7:20:02 PM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+7:20:04 PM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:20:04 PM [vite] (client) hmr update /src/App.jsx, /src/pages/ProjectsPage.jsx, /src/pages/LoginPage.jsx, /src/pages/SignupPage.jsx, /src/components/features/batch/BatchProcessor.jsx, /src/components/layout/Navbar.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/MobileToolsSheet.jsx, /src/components/features/OnboardingTour.jsx, /src/components/layout/Sidebar.jsx

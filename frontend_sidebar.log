@@ -1,0 +1,1095 @@
+
+> fixpix@0.0.0 dev
+> vite
+
+
+  VITE v7.3.0  ready in 201 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+7:41:49 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:42:02 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:45:55 PM [vite] (client) hmr update /src/index.css
+7:46:53 PM [vite] (client) hmr update /src/index.css, /src/context/SidebarContext.jsx
+7:46:54 PM [vite] (client) hmr invalidate /src/context/SidebarContext.jsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:46:54 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/ModeTopBar.jsx, /src/components/sidebar/ZoneInsight.jsx, /src/components/sidebar/ZoneRestore.jsx, /src/components/sidebar/ZoneEnhance.jsx, /src/components/sidebar/ZoneCreate.jsx, /src/components/sidebar/ActionCard.jsx
+7:47:18 PM [vite] (client) hmr update /src/index.css, /src/context/SidebarContext.jsx
+7:47:19 PM [vite] (client) hmr invalidate /src/context/SidebarContext.jsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:47:19 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/ModeTopBar.jsx, /src/components/sidebar/ZoneInsight.jsx, /src/components/sidebar/ZoneRestore.jsx, /src/components/sidebar/ZoneEnhance.jsx, /src/components/sidebar/ZoneCreate.jsx, /src/components/sidebar/ActionCard.jsx
+7:47:40 PM [vite] (client) hmr update /src/index.css, /src/components/features/ModeTopBar.jsx
+7:47:42 PM [vite] (client) hmr update /src/index.css, /src/components/features/ModeTopBar.jsx
+7:47:53 PM [vite] (client) hmr update /src/index.css, /src/components/features/ModeTopBar.jsx
+7:48:00 PM [vite] (client) hmr update /src/index.css, /src/components/features/ModeTopBar.jsx
+7:48:37 PM [vite] (client) hmr update /src/index.css, /src/components/features/ImageWorkspace.jsx
+7:50:47 PM [vite] (client) hmr update /src/index.css, /src/context/SidebarContext.jsx
+7:50:47 PM [vite] (client) hmr invalidate /src/context/SidebarContext.jsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:50:47 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/ModeTopBar.jsx, /src/components/sidebar/ZoneInsight.jsx, /src/components/sidebar/ZoneRestore.jsx, /src/components/sidebar/ZoneEnhance.jsx, /src/components/sidebar/ZoneCreate.jsx, /src/components/sidebar/ActionCard.jsx, /src/components/features/ImageWorkspace.jsx
+7:51:00 PM [vite] (client) hmr update /src/index.css, /src/context/SidebarContext.jsx
+7:51:01 PM [vite] (client) hmr invalidate /src/context/SidebarContext.jsx Could not Fast Refresh ("useSidebar" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+7:51:01 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/ModeTopBar.jsx, /src/components/sidebar/ZoneInsight.jsx, /src/components/sidebar/ZoneRestore.jsx, /src/components/sidebar/ZoneEnhance.jsx, /src/components/sidebar/ZoneCreate.jsx, /src/components/sidebar/ActionCard.jsx, /src/components/features/ImageWorkspace.jsx
+7:55:07 PM [vite] (client) hmr update /src/App.jsx, /src/index.css
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:07 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:10 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:23 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:55:24 PM [vite] (client) Pre-transform error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+7:55:24 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:25 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+7:55:30 PM [vite] (client) Pre-transform error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+7:55:30 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:33 PM [vite] (client) hmr update /src/App.jsx, /src/index.css
+7:55:33 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:33 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:33 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:33 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:33 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)
+7:55:36 PM [vite] (client) Pre-transform error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+7:55:36 PM [vite] Internal server error: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx: Expected corresponding JSX closing tag for <SidebarProvider>. (92:14)
+
+  90 |                     </Routes>
+  91 |                   </ModalProvider>
+> 92 |               </ImageProvider>
+     |               ^
+  93 |             </AuthProvider>
+  94 |           </Router>
+  95 |         </ToastProvider>
+  Plugin: vite:react-babel
+  File: /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/src/App.jsx:92:14
+  90 |                      </Routes>
+  91 |                    </ModalProvider>
+  92 |                </ImageProvider>
+     |                ^
+  93 |              </AuthProvider>
+  94 |            </Router>
+      at constructor (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:367:19)
+      at JSXParserMixin.raise (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:6624:19)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4756:16)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElementAt (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4727:32)
+      at JSXParserMixin.jsxParseElement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4778:17)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4788:19)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12500:12)
+      at JSXParserMixin.parseMaybeAssignAllowIn (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10864:17)
+      at JSXParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12567:17)
+      at JSXParserMixin.parseParenAndDistinguishExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11747:28)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11395:23)
+      at JSXParserMixin.parseExprAtom (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:4793:20)
+      at JSXParserMixin.parseExprSubscripts (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11145:23)
+      at JSXParserMixin.parseUpdate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11130:21)
+      at JSXParserMixin.parseMaybeUnary (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:11110:23)
+      at JSXParserMixin.parseMaybeUnaryOrPrivate (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10963:61)
+      at JSXParserMixin.parseExprOps (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10968:23)
+      at JSXParserMixin.parseMaybeConditional (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10945:23)
+      at JSXParserMixin.parseMaybeAssign (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10895:21)
+      at JSXParserMixin.parseExpressionBase (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10848:23)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:39
+      at JSXParserMixin.allowInAnd (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12495:16)
+      at JSXParserMixin.parseExpression (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:10844:17)
+      at JSXParserMixin.parseReturnStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13218:28)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12874:21)
+      at JSXParserMixin.parseStatementLike (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12843:17)
+      at JSXParserMixin.parseStatementListItem (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12823:17)
+      at JSXParserMixin.parseBlockOrModuleBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13392:61)
+      at JSXParserMixin.parseBlockBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13385:10)
+      at JSXParserMixin.parseBlock (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13373:10)
+      at JSXParserMixin.parseFunctionBody (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12174:24)
+      at JSXParserMixin.parseFunctionBodyAndFinish (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12160:10)
+      at /Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13521:12
+      at JSXParserMixin.withSmartMixTopicForbiddingContext (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12477:14)
+      at JSXParserMixin.parseFunction (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13520:10)
+      at JSXParserMixin.parseFunctionStatement (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:13201:17)
+      at JSXParserMixin.parseStatementContent (/Users/parthbhanderi/Library/Mobile Documents/com~apple~CloudDocs/FixPix/apps/website/node_modules/@babel/parser/lib/index.js:12867:21)

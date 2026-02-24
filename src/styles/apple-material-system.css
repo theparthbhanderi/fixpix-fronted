@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   APPLE-GRADE MATERIAL SYSTEM
+   Token definitions + used component classes only.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   1. TOKEN SYSTEM — Light Mode
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+:root {
+    /* Surface Layers */
+    --surface-background: #F5F5F7;
+    --surface-workspace: rgba(255, 255, 255, 0.85);
+    --surface-panel: rgba(252, 252, 254, 0.95);
+    --surface-card: rgba(255, 255, 255, 0.98);
+    --surface-elevated: #FFFFFF;
+    --surface-active: rgba(0, 122, 255, 0.06);
+
+    /* Inner Strokes */
+    --stroke-subtle: inset 0 0.5px 0 rgba(255, 255, 255, 0.8);
+    --stroke-medium: inset 0 0.5px 0 rgba(255, 255, 255, 1);
+    --stroke-separator: rgba(0, 0, 0, 0.04);
+    --stroke-active: rgba(0, 122, 255, 0.15);
+
+    /* Shadow aliases → unified depth tokens from theme.css */
+    --shadow-card: var(--depth-1);
+    --shadow-card-hover: var(--depth-2);
+    --shadow-card-active: var(--depth-1);
+    --shadow-panel: var(--depth-2);
+    --shadow-sheet: var(--depth-3);
+
+    /* Material Blur */
+    --material-panel: blur(40px) saturate(180%) brightness(1.02);
+    --material-sheet: blur(60px) saturate(200%) brightness(1.05);
+    --material-card: blur(20px) saturate(150%);
+    --material-toolbar: blur(50px) saturate(180%);
+
+    /* Typography Tracking */
+    --tracking-tight: -0.4px;
+    --tracking-normal: -0.2px;
+    --tracking-wide: 0.2px;
+    --tracking-caps: 0.5px;
+
+    /* 8px Grid Spacing */
+    --grid-1: 4px;
+    --grid-2: 8px;
+    --grid-3: 12px;
+    --grid-4: 16px;
+    --grid-5: 20px;
+    --grid-6: 24px;
+    --grid-8: 32px;
+    --grid-10: 40px;
+    --grid-12: 48px;
+
+    /* Squircle Radius */
+    --squircle-s: 8px;
+    --squircle-m: 12px;
+    --squircle-l: 16px;
+    --squircle-xl: 22px;
+    --squircle-2xl: 28px;
+
+    /* Motion */
+    --ease-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    --duration-fast: 100ms;
+    --duration-normal: 150ms;
+    --duration-slow: 200ms;
+
+    /* Accent */
+    --accent: #007AFF;
+    --accent-secondary: rgba(0, 122, 255, 0.08);
+    --accent-stroke: rgba(0, 122, 255, 0.12);
+
+    /* Fills */
+    --fill-primary: rgba(120, 120, 128, 0.16);
+    --fill-secondary: rgba(120, 120, 128, 0.08);
+    --fill-tertiary: rgba(120, 120, 128, 0.04);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   DARK MODE
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.dark {
+    --surface-background: #0E0F11;
+    --surface-workspace: rgba(22, 23, 26, 0.95);
+    --surface-panel: rgba(28, 29, 33, 0.95);
+    --surface-card: rgba(31, 32, 36, 0.95);
+    --surface-elevated: rgba(42, 43, 48, 0.98);
+    --surface-active: rgba(10, 132, 255, 0.12);
+
+    --stroke-subtle: inset 0 0.5px 0 rgba(255, 255, 255, 0.04);
+    --stroke-medium: inset 0 0.5px 0 rgba(255, 255, 255, 0.06);
+    --stroke-separator: rgba(255, 255, 255, 0.06);
+    --stroke-active: rgba(10, 132, 255, 0.25);
+
+    /* Shadow aliases — dark mode */
+    --shadow-card: var(--depth-1);
+    --shadow-card-hover: var(--depth-2);
+    --shadow-card-active: var(--depth-1);
+    --shadow-panel: var(--depth-2);
+    --shadow-sheet: var(--depth-3);
+
+    --material-panel: blur(40px) saturate(200%) brightness(0.98);
+    --material-sheet: blur(60px) saturate(220%) brightness(0.95);
+
+    --accent: #0A84FF;
+    --accent-secondary: rgba(10, 132, 255, 0.12);
+    --accent-stroke: rgba(10, 132, 255, 0.25);
+
+    --fill-primary: rgba(120, 120, 128, 0.24);
+    --fill-secondary: rgba(120, 120, 128, 0.16);
+    --fill-tertiary: rgba(120, 120, 128, 0.08);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   2. USED COMPONENT CLASSES (4 classes)
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Card */
+.apple-card {
+    background: var(--surface-card);
+    box-shadow: var(--depth-1);
+    border-radius: var(--squircle-m);
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        box-shadow var(--duration-normal) var(--ease-out);
+    will-change: transform;
+}
+
+.apple-card:hover {
+    box-shadow: var(--depth-2);
+}
+
+.apple-card:active {
+    transform: scale(0.98);
+    box-shadow: var(--depth-1);
+}
+
+/* Typography */
+.apple-text-headline {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: var(--tracking-normal);
+    line-height: 1.4;
+}
+
+.apple-text-caption {
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: -0.1px;
+    line-height: 1.4;
+}
+
+/* Secondary Button */
+.apple-btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--grid-2);
+    padding: var(--grid-3) var(--grid-5);
+    min-height: 44px;
+
+    background: var(--fill-secondary);
+    color: var(--accent);
+
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: var(--tracking-normal);
+
+    border: none;
+    border-radius: var(--squircle-m);
+    cursor: pointer;
+
+    transition:
+        transform var(--duration-fast) var(--ease-out),
+        background var(--duration-fast);
+}
+
+.apple-btn-secondary:hover {
+    background: var(--fill-primary);
+}
+
+.apple-btn-secondary:active {
+    transform: scale(0.97);
+}
