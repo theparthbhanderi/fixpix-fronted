@@ -56,11 +56,12 @@ const Navbar = () => {
                     style={{
                         padding: '0 var(--space-4)',
                         borderRadius: 'var(--radius-2xl)',
-                        backgroundColor: 'var(--glass-bg)',
-                        backdropFilter: 'var(--glass-blur)',
-                        WebkitBackdropFilter: 'var(--glass-blur)',
-                        border: '1px solid var(--glass-border)',
-                        boxShadow: 'var(--navbar-inner-highlight), var(--depth-2)',
+                        backgroundColor: 'var(--glass-bg, rgba(255, 255, 255, 0.75))',
+                        backdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
+                        WebkitBackdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
+                        border: '1px solid var(--glass-border, rgba(0, 0, 0, 0.08))',
+                        boxShadow: 'var(--navbar-inner-highlight, none), var(--depth-2)',
+                        willChange: 'backdrop-filter',
                         transition: 'height 250ms cubic-bezier(0.25, 1, 0.5, 1)',
                     }}
                 >

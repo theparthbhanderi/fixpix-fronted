@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ImageContext } from '../../context/ImageContext';
 import Logo from '../ui/Logo';
-import { Layers, Image as ImageIcon, Settings, SquareStack, Sun, Moon, Plus, LogOut, X } from 'lucide-react';
+import { Layers, Image as ImageIcon, Settings, SquareStack, Sun, Moon, Plus, LogOut, X, Home } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AuthContext from '../../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -217,6 +217,15 @@ const Sidebar = ({ isOpen, onClose }) => {
 
                 {/* Navigation */}
                 <nav className="flex-1 overflow-y-auto" style={{ padding: '0 var(--space-3)', marginTop: 'var(--space-4)' }}>
+                    <div className="space-y-1" style={{ marginBottom: '4px' }}>
+                        <MenuItem
+                            icon={Home}
+                            label="Home"
+                            active={false}
+                            onClick={() => navigate('/')}
+                        />
+                    </div>
+
                     <SectionLabel label="Workspace" />
                     <div className="space-y-1">
                         {workspaceNav.map((item) => (
