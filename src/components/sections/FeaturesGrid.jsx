@@ -1,108 +1,325 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Wand2, Zap, MonitorPlay, Maximize2 } from 'lucide-react';
+import { Wand2, Zap, Eraser, Maximize2, Palette, Layers } from 'lucide-react';
 
 const features = [
     {
-        title: "Auto Colorization",
-        description: "Automatically add color to black and white photos using deep learning.",
-        icon: Wand2,
+        title: 'Auto Colorization',
+        description: 'Breathe life into black & white memories. Our deep learning model adds natural, historically-accurate color.',
+        icon: Palette,
+        accent: '#AF52DE',
+        accentSoft: 'rgba(175, 82, 222, 0.08)',
+        size: 'large',
     },
     {
-        title: "Face Enhancement",
-        description: "Restore facial details with incredible precision using AI.",
+        title: 'Face Enhancement',
+        description: 'Recover facial details — eyes, skin texture, and expressions — with incredible AI precision.',
         icon: Zap,
+        accent: '#FF9500',
+        accentSoft: 'rgba(255, 149, 0, 0.08)',
+        size: 'small',
     },
     {
-        title: "Scratch Removal",
-        description: "Intelligently fill in scratches, tears, and imperfections.",
-        icon: MonitorPlay,
+        title: 'Scratch Removal',
+        description: 'Intelligently detect and fill scratches, tears, and dust marks while preserving original detail.',
+        icon: Eraser,
+        accent: '#007AFF',
+        accentSoft: 'rgba(0, 122, 255, 0.08)',
+        size: 'small',
     },
     {
-        title: "4K Upscaling",
-        description: "Increase resolution up to 4x without any quality loss.",
+        title: '4K Upscaling',
+        description: 'Increase resolution up to 4× with AI super-resolution. Perfect for printing large-format photos.',
         icon: Maximize2,
+        accent: '#34C759',
+        accentSoft: 'rgba(52, 199, 89, 0.08)',
+        size: 'small',
+    },
+    {
+        title: 'Smart Inpainting',
+        description: 'Select any unwanted area and our AI fills it seamlessly with context-aware content generation.',
+        icon: Wand2,
+        accent: '#FF2D55',
+        accentSoft: 'rgba(255, 45, 85, 0.08)',
+        size: 'small',
+    },
+    {
+        title: 'Batch Processing',
+        description: 'Restore entire albums at once. Queue multiple images and let AI process them in the background.',
+        icon: Layers,
+        accent: '#5AC8FA',
+        accentSoft: 'rgba(90, 200, 250, 0.08)',
+        size: 'large',
     },
 ];
 
-const FeatureCard = ({ feature, index }) => (
+/* ───── Feature Card ───── */
+const FeatureCard = ({ feature, index, isSlider = false }) => (
     <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.4, delay: index * 0.08, ease: [0.25, 1, 0.5, 1] }}
-        whileHover={{ y: -2, transition: { duration: 0.15 } }}
-        className="h-full"
+        initial={isSlider ? {} : { opacity: 0, y: 24 }}
+        whileInView={isSlider ? {} : { opacity: 1, y: 0 }}
+        viewport={isSlider ? undefined : { once: true, margin: '-40px' }}
+        transition={isSlider ? {} : { duration: 0.5, delay: index * 0.07, ease: [0.25, 1, 0.5, 1] }}
+        className={isSlider ? '' : feature.size === 'large' ? 'md:col-span-2' : ''}
         style={{
-            padding: 'var(--space-7)',
-            borderRadius: 'var(--radius-2xl)',
-            backgroundColor: 'var(--card-bg)',
-            border: 'var(--card-border)',
-            boxShadow: 'var(--depth-1)',
-            transition: 'transform 250ms cubic-bezier(0.25, 1, 0.5, 1), box-shadow 250ms cubic-bezier(0.25, 1, 0.5, 1)',
+            height: '100%',
+            ...(isSlider ? { width: '80vw', maxWidth: '300px', flexShrink: 0, scrollSnapAlign: 'center' } : {}),
         }}
     >
-        {/* Icon — monochrome accent tint */}
         <div
-            className="w-12 h-12 rounded-2xl flex items-center justify-center mb-5"
             style={{
-                backgroundColor: 'var(--accent-soft)',
+                padding: isSlider ? '22px 20px' : 'clamp(24px, 3vw, 32px)',
+                borderRadius: 'var(--radius-2xl)',
+                backgroundColor: 'var(--surface)',
+                border: '1px solid var(--border-subtle)',
+                boxShadow: 'var(--depth-1)',
+                height: '100%',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                overflow: 'hidden',
+                transition: 'box-shadow 300ms ease, transform 300ms ease',
+                cursor: 'default',
+            }}
+            onMouseEnter={e => {
+                e.currentTarget.style.boxShadow = 'var(--depth-2)';
+                e.currentTarget.style.transform = 'translateY(-3px)';
+            }}
+            onMouseLeave={e => {
+                e.currentTarget.style.boxShadow = 'var(--depth-1)';
+                e.currentTarget.style.transform = 'translateY(0)';
             }}
         >
-            <feature.icon className="w-6 h-6" style={{ color: 'var(--accent)' }} strokeWidth={1.5} />
-        </div>
+            {/* Accent glow */}
+            <div
+                style={{
+                    position: 'absolute',
+                    top: '-40px',
+                    right: '-40px',
+                    width: '120px',
+                    height: '120px',
+                    borderRadius: '50%',
+                    background: `radial-gradient(circle, ${feature.accent}12, transparent 70%)`,
+                    pointerEvents: 'none',
+                }}
+            />
 
-        <h3
-            className="text-text-main mb-2"
-            style={{ fontSize: '18px', fontWeight: 600, letterSpacing: '-0.3px', lineHeight: 1.3 }}
-        >
-            {feature.title}
-        </h3>
-        <p
-            className="text-text-secondary"
-            style={{ fontSize: '15px', lineHeight: 1.6 }}
-        >
-            {feature.description}
-        </p>
+            {/* Icon */}
+            <div
+                style={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: 13,
+                    backgroundColor: feature.accentSoft,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: isSlider ? '14px' : 'clamp(14px, 2vw, 20px)',
+                    flexShrink: 0,
+                }}
+            >
+                <feature.icon size={22} strokeWidth={1.75} style={{ color: feature.accent }} />
+            </div>
+
+            {/* Title */}
+            <h3
+                style={{
+                    fontSize: isSlider ? '16px' : 'clamp(17px, 2vw, 20px)',
+                    fontWeight: 650,
+                    letterSpacing: '-0.3px',
+                    lineHeight: 1.3,
+                    color: 'var(--text-primary)',
+                    marginBottom: '6px',
+                }}
+            >
+                {feature.title}
+            </h3>
+
+            {/* Description */}
+            <p
+                style={{
+                    fontSize: isSlider ? '13px' : 'clamp(14px, 1.5vw, 15px)',
+                    lineHeight: 1.6,
+                    color: 'var(--text-secondary)',
+                    flex: 1,
+                }}
+            >
+                {feature.description}
+            </p>
+
+            {/* Accent bottom line */}
+            <div
+                style={{
+                    position: 'absolute',
+                    bottom: 0,
+                    left: '20px',
+                    right: '20px',
+                    height: '2px',
+                    background: `linear-gradient(90deg, ${feature.accent}40, transparent)`,
+                    borderRadius: 1,
+                }}
+            />
+        </div>
     </motion.div>
 );
 
-const FeaturesGrid = () => {
-    return (
-        <section id="features" className="px-5 md:px-8" style={{ paddingTop: 'clamp(64px, 8vw, 96px)', paddingBottom: 'clamp(64px, 8vw, 96px)' }}>
-            <div className="max-w-[1280px] mx-auto">
-                {/* Section Header */}
-                <div className="text-center mb-12 md:mb-16">
-                    <motion.h2
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="text-text-main mb-4"
-                        style={{ fontSize: '28px', fontWeight: 700, letterSpacing: '-0.5px', lineHeight: 1.25 }}
-                    >
-                        Powerful AI Tools
-                    </motion.h2>
-                    <motion.p
-                        initial={{ opacity: 0, y: 16 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.08 }}
-                        className="text-text-secondary max-w-lg mx-auto"
-                        style={{ fontSize: '15px', lineHeight: 1.6 }}
-                    >
-                        Our AI engine understands your photos to apply the perfect restoration steps.
-                    </motion.p>
-                </div>
+/* ───── Mobile Slider ───── */
+const MobileSlider = () => {
+    const scrollRef = useRef(null);
+    const [activeIndex, setActiveIndex] = useState(0);
 
-                {/* 3-column grid desktop, single-column mobile */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {features.map((feature, index) => (
-                        <FeatureCard key={index} feature={feature} index={index} />
-                    ))}
-                </div>
+    useEffect(() => {
+        const el = scrollRef.current;
+        if (!el) return;
+        const handleScroll = () => {
+            const scrollLeft = el.scrollLeft;
+            const cardWidth = el.firstChild?.offsetWidth || 280;
+            const gap = 12;
+            const idx = Math.round(scrollLeft / (cardWidth + gap));
+            setActiveIndex(Math.min(idx, features.length - 1));
+        };
+        el.addEventListener('scroll', handleScroll, { passive: true });
+        return () => el.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    return (
+        <div>
+            {/* Scrollable track */}
+            <div
+                ref={scrollRef}
+                className="hide-scrollbar"
+                style={{
+                    display: 'flex',
+                    gap: '12px',
+                    overflowX: 'auto',
+                    scrollSnapType: 'x mandatory',
+                    WebkitOverflowScrolling: 'touch',
+                    paddingLeft: '20px',
+                    paddingRight: '20px',
+                    paddingBottom: '8px',
+                }}
+            >
+                {features.map((f, i) => (
+                    <FeatureCard key={i} feature={f} index={i} isSlider />
+                ))}
             </div>
-        </section>
+
+            {/* Dot indicators */}
+            <div className="flex justify-center gap-1.5" style={{ marginTop: '16px' }}>
+                {features.map((_, i) => (
+                    <button
+                        key={i}
+                        onClick={() => {
+                            const el = scrollRef.current;
+                            if (!el) return;
+                            const cardWidth = el.firstChild?.offsetWidth || 280;
+                            el.scrollTo({ left: i * (cardWidth + 12), behavior: 'smooth' });
+                        }}
+                        style={{
+                            width: i === activeIndex ? '20px' : '7px',
+                            height: '7px',
+                            borderRadius: '4px',
+                            backgroundColor: i === activeIndex ? 'var(--accent)' : 'var(--fill-secondary)',
+                            border: 'none',
+                            cursor: 'pointer',
+                            transition: 'all 250ms ease',
+                            padding: 0,
+                        }}
+                        aria-label={`Go to feature ${i + 1}`}
+                    />
+                ))}
+            </div>
+        </div>
     );
 };
+
+/* ───── Main Section ───── */
+const FeaturesGrid = () => (
+    <section
+        id="features"
+        className="px-0 md:px-8"
+        style={{
+            paddingTop: 'clamp(64px, 8vw, 120px)',
+            paddingBottom: 'clamp(64px, 8vw, 120px)',
+        }}
+    >
+        <div className="max-w-[1180px] mx-auto">
+            {/* Header */}
+            <div className="text-center px-5 md:px-0" style={{ marginBottom: 'clamp(36px, 5vw, 72px)' }}>
+                <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4 }}
+                >
+                    <span
+                        style={{
+                            display: 'inline-block',
+                            fontSize: '11px',
+                            fontWeight: 700,
+                            letterSpacing: '1.5px',
+                            textTransform: 'uppercase',
+                            color: 'var(--accent)',
+                            marginBottom: '14px',
+                            padding: '5px 14px',
+                            borderRadius: '20px',
+                            backgroundColor: 'var(--accent-soft)',
+                        }}
+                    >
+                        Features
+                    </span>
+                </motion.div>
+
+                <motion.h2
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.06, duration: 0.45 }}
+                    style={{
+                        fontSize: 'clamp(24px, 4vw, 36px)',
+                        fontWeight: 700,
+                        letterSpacing: '-0.5px',
+                        lineHeight: 1.2,
+                        color: 'var(--text-primary)',
+                        marginBottom: '12px',
+                    }}
+                >
+                    Powerful AI Tools
+                </motion.h2>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 12 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.1, duration: 0.4 }}
+                    style={{
+                        fontSize: 'clamp(14px, 2vw, 16px)',
+                        lineHeight: 1.65,
+                        color: 'var(--text-secondary)',
+                        maxWidth: '460px',
+                        margin: '0 auto',
+                    }}
+                >
+                    Our AI engine understands your photos and applies the perfect restoration — automatically.
+                </motion.p>
+            </div>
+
+            {/* Desktop: Bento Grid */}
+            <div
+                className="hidden md:grid grid-cols-3"
+                style={{ gap: 'clamp(14px, 2vw, 20px)' }}
+            >
+                {features.map((feature, index) => (
+                    <FeatureCard key={index} feature={feature} index={index} />
+                ))}
+            </div>
+
+            {/* Mobile: Horizontal Slider */}
+            <div className="block md:hidden">
+                <MobileSlider />
+            </div>
+        </div>
+    </section>
+);
 
 export default FeaturesGrid;

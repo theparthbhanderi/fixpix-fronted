@@ -303,27 +303,7 @@ const BeforeAfterSlider = ({ before, after, className, onSlidingChange }) => {
                 </motion.div>
             </div>
 
-            {/* Drag Hint */}
-            <AnimatePresence>
-                {showHint && (
-                    <motion.div
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 0.9, y: 0 }}
-                        exit={{ opacity: 0, y: -5, scale: 0.95 }}
-                        transition={{ duration: 0.2 }}
-                        className="absolute bottom-4 left-1/2 -translate-x-1/2 px-3 py-2 rounded-full text-[12px] font-medium text-white/90 z-50 pointer-events-none flex items-center gap-2"
-                        style={{
-                            backgroundColor: 'rgb(0 0 0 / 0.4)',
-                            backdropFilter: 'blur(12px)',
-                            WebkitBackdropFilter: 'blur(12px)'
-                        }}
-                    >
-                        <ChevronLeft className="w-3.5 h-3.5 opacity-60" strokeWidth={2.5} />
-                        <span className="leading-none">Drag to compare</span>
-                        <ChevronRight className="w-3.5 h-3.5 opacity-60" strokeWidth={2.5} />
-                    </motion.div>
-                )}
-            </AnimatePresence>
+
         </div>
     );
 };

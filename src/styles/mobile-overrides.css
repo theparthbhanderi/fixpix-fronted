@@ -4,6 +4,17 @@
    Premium iOS-level floating capsule system.
    ═══════════════════════════════════════════════════════════════════ */
 
+/* Utility: hide scrollbar but keep scroll */
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+
 /* ─── FOUNDATION ───────────────────────────────────────────────── */
 @media (max-width: 768px) {
     :root {
