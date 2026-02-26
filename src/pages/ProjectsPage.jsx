@@ -4,98 +4,117 @@ import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     FolderOpen, Calendar, Upload, Search,
-    MoreHorizontal, Plus, SlidersHorizontal, ArrowUpDown
+    MoreHorizontal, Plus, ArrowUpDown, Image, Sparkles, Wand2
 } from 'lucide-react';
 
 /* ── Design Tokens ─────────────────────────────────── */
-const tokens = {
-    light: {
-        bg: 'var(--bg-primary)',
-        cardBg: 'var(--card-bg)',
-        cardBorder: 'var(--card-border)',
-        cardShadow: 'var(--depth-1)',
-        cardHoverShadow: 'var(--depth-2)',
-        floatBg: 'var(--glass-bg)',
-        floatBorder: 'var(--glass-border)',
-        floatShadow: 'var(--depth-1)',
-        text: 'var(--text-primary)',
-        textSecondary: 'var(--text-secondary)',
-        inputBg: 'var(--fill-tertiary)',
-        inputBorder: 'var(--border-subtle)',
-        badgeBg: 'var(--accent-soft)',
-    },
-    dark: {
-        bg: 'var(--bg-primary)',
-        cardBg: 'var(--card-bg)',
-        cardBorder: 'var(--card-border)',
-        cardShadow: 'var(--depth-1)',
-        cardHoverShadow: 'var(--depth-2)',
-        floatBg: 'var(--glass-bg)',
-        floatBorder: 'var(--glass-border)',
-        floatShadow: 'var(--depth-1)',
-        text: 'var(--text-primary)',
-        textSecondary: 'var(--text-secondary)',
-        inputBg: 'var(--fill-tertiary)',
-        inputBorder: 'var(--border-subtle)',
-        badgeBg: 'var(--accent-soft)',
-    },
-};
-
 const useThemeTokens = () => {
     const { theme } = useContext(ImageContext);
-    return theme === 'dark' ? tokens.dark : tokens.light;
+    const isDark = theme === 'dark';
+    return {
+        bg: 'var(--bg-primary)',
+        cardBg: 'var(--surface)',
+        cardBorder: 'var(--border-subtle)',
+        text: 'var(--text-primary)',
+        textSecondary: 'var(--text-secondary)',
+        inputBg: 'var(--fill-tertiary)',
+        inputBorder: 'var(--border-subtle)',
+        badgeBg: 'var(--accent-soft)',
+        skeletonBase: isDark ? 'rgba(255,255,255,0.04)' : 'rgba(0,0,0,0.04)',
+        skeletonShine: isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)',
+    };
 };
 
 /* ── Skeleton ──────────────────────────────────────── */
-const ProjectSkeleton = ({ t }) => (
-    <div style={{
-        borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
-        background: t.cardBg,
-        border: `1px solid ${t.cardBorder}`,
-    }}>
-        <div style={{ aspectRatio: '4/3', background: t.inputBg }} />
+const ProjectSkeleton = ({ t, index }) => (
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, delay: index * 0.05 }}
+        style={{
+            borderRadius: 'var(--radius-2xl)', overflow: 'hidden',
+            background: t.cardBg,
+            border: `1px solid ${t.cardBorder}`,
+        }}
+    >
+        <div style={{
+            aspectRatio: '4/3',
+            background: `linear-gradient(110deg, ${t.skeletonBase} 30%, ${t.skeletonShine} 50%, ${t.skeletonBase} 70%)`,
+            backgroundSize: '300% 100%',
+            animation: 'shimmer 1.8s ease-in-out infinite',
+        }} />
         <div style={{ padding: 16 }}>
-            <div style={{ height: 18, width: '70%', borderRadius: 'var(--radius-sm)', background: t.inputBg, marginBottom: 12 }} />
-            <div style={{ height: 14, width: '40%', borderRadius: 6, background: t.inputBg }} />
+            <div style={{
+                height: 16, width: '65%', borderRadius: 8,
+                background: `linear-gradient(110deg, ${t.skeletonBase} 30%, ${t.skeletonShine} 50%, ${t.skeletonBase} 70%)`,
+                backgroundSize: '300% 100%', animation: 'shimmer 1.8s ease-in-out infinite',
+                marginBottom: 10,
+            }} />
+            <div style={{
+                height: 12, width: '35%', borderRadius: 6,
+                background: `linear-gradient(110deg, ${t.skeletonBase} 30%, ${t.skeletonShine} 50%, ${t.skeletonBase} 70%)`,
+                backgroundSize: '300% 100%', animation: 'shimmer 1.8s ease-in-out infinite',
+            }} />
         </div>
-    </div>
+    </motion.div>
 );
 
 /* ── Empty State ───────────────────────────────────── */
 const EmptyState = ({ onUpload, t }) => (
     <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.25 }}
+        transition={{ duration: 0.35, ease: [0.25, 1, 0.5, 1] }}
         style={{
-            maxWidth: 440,
-            margin: '80px auto 0',
-            padding: 'var(--space-9)',
+            maxWidth: 480,
+            margin: '60px auto 0',
+            padding: '48px 40px',
             borderRadius: 'var(--radius-2xl)',
             background: t.cardBg,
             border: `1px solid ${t.cardBorder}`,
             boxShadow: 'var(--depth-1)',
             textAlign: 'center',
         }}
-        className="projects-empty-state"
     >
-        <div style={{
-            width: 80, height: 80, borderRadius: 'var(--radius-2xl)',
-            background: t.inputBg,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            margin: '0 auto 24px',
-        }}>
-            <FolderOpen size={36} strokeWidth={1.2} style={{ color: t.textSecondary }} />
+        {/* Illustration */}
+        <div style={{ position: 'relative', display: 'inline-block', marginBottom: 28 }}>
+            <div style={{
+                width: 88, height: 88, borderRadius: 'var(--radius-2xl)',
+                background: 'var(--accent-soft)',
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+                <FolderOpen size={40} strokeWidth={1.2} style={{ color: 'var(--accent)' }} />
+            </div>
+            <motion.div
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+                style={{
+                    position: 'absolute', bottom: -6, right: -10,
+                    width: 32, height: 32, borderRadius: 'var(--radius-lg)',
+                    background: 'var(--accent)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
+                }}
+            >
+                <Wand2 size={16} strokeWidth={2} style={{ color: 'white' }} />
+            </motion.div>
         </div>
 
-        <h3 style={{ fontSize: 20, fontWeight: 600, color: t.text, marginBottom: 'var(--space-2)', letterSpacing: '-0.3px' }}>
+        <h3 style={{
+            fontSize: 22, fontWeight: 650, color: t.text,
+            marginBottom: 8, letterSpacing: '-0.4px',
+        }}>
             No Projects Yet
         </h3>
-        <p style={{ fontSize: 14, color: t.textSecondary, marginBottom: 28, lineHeight: 1.5 }}>
-            Upload your first photo and watch AI restore it to its former glory.
+        <p style={{
+            fontSize: 15, color: t.textSecondary,
+            marginBottom: 32, lineHeight: 1.6,
+            maxWidth: 320, margin: '0 auto 32px',
+        }}>
+            Upload your first photo and let AI restore, colorize, or enhance it in seconds.
         </p>
 
-        <label style={{ cursor: 'pointer' }}>
+        <label style={{ cursor: 'pointer', display: 'inline-block' }}>
             <input
                 type="file"
                 accept="image/*"
@@ -104,14 +123,16 @@ const EmptyState = ({ onUpload, t }) => (
             />
             <motion.span
                 whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.02 }}
                 style={{
-                    display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)',
-                    padding: '14px 28px',
-                    borderRadius: 'var(--radius-lg)',
+                    display: 'inline-flex', alignItems: 'center', gap: 8,
+                    padding: '14px 32px',
+                    borderRadius: 'var(--radius-xl)',
                     background: 'var(--accent)',
                     color: '#fff',
                     fontSize: 15, fontWeight: 600,
                     cursor: 'pointer',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.12)',
                 }}
             >
                 <Upload size={18} strokeWidth={2} />
@@ -121,15 +142,36 @@ const EmptyState = ({ onUpload, t }) => (
     </motion.div>
 );
 
+/* ── Status Badge ──────────────────────────────────── */
+const StatusBadge = ({ status }) => {
+    const colors = {
+        completed: { bg: 'rgba(52,199,89,0.1)', color: '#34C759' },
+        processing: { bg: 'rgba(255,149,0,0.1)', color: '#FF9500' },
+        pending: { bg: 'rgba(255,149,0,0.1)', color: '#FF9500' },
+        failed: { bg: 'rgba(255,59,48,0.1)', color: '#FF3B30' },
+    };
+    const c = colors[status] || colors.completed;
+    return (
+        <span style={{
+            padding: '2px 8px', borderRadius: 'var(--radius-sm)',
+            fontSize: 11, fontWeight: 600, textTransform: 'capitalize',
+            background: c.bg, color: c.color,
+        }}>
+            {status === 'completed' ? '✓ Done' : status}
+        </span>
+    );
+};
+
 /* ── Project Card ──────────────────────────────────── */
 const ProjectCard = ({ project, onClick, index, t }) => {
     const [hovered, setHovered] = useState(false);
+    const imgSrc = project.processed_image || project.original_image;
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 12 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.25, delay: index * 0.04 }}
+            transition={{ duration: 0.3, delay: index * 0.04, ease: [0.25, 1, 0.5, 1] }}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             onClick={onClick}
@@ -139,38 +181,49 @@ const ProjectCard = ({ project, onClick, index, t }) => {
                 background: t.cardBg,
                 border: `1px solid ${t.cardBorder}`,
                 boxShadow: hovered ? 'var(--depth-2)' : 'var(--depth-1)',
-                transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-                transition: 'all 180ms cubic-bezier(0.25, 1, 0.5, 1)',
+                transform: hovered ? 'translateY(-3px)' : 'translateY(0)',
+                transition: 'all 200ms cubic-bezier(0.25, 1, 0.5, 1)',
                 cursor: 'pointer',
             }}
-            className="projects-page-container"
         >
-            {/* Image Preview — 4:3 */}
+            {/* Image Preview */}
             <div style={{
                 aspectRatio: '4/3',
                 position: 'relative',
                 overflow: 'hidden',
-                background: 'var(--canvas-bg)',
+                background: 'var(--fill-tertiary)',
             }}>
-                <img
-                    src={project.processed_image || project.original_image}
-                    alt={project.title}
-                    style={{
+                {imgSrc ? (
+                    <img
+                        src={imgSrc}
+                        alt={project.title || 'Project'}
+                        loading="lazy"
+                        style={{
+                            width: '100%', height: '100%',
+                            objectFit: 'cover', display: 'block',
+                            transition: 'transform 300ms ease',
+                            transform: hovered ? 'scale(1.03)' : 'scale(1)',
+                        }}
+                    />
+                ) : (
+                    <div style={{
                         width: '100%', height: '100%',
-                        objectFit: 'cover',
-                        display: 'block',
-                    }}
-                />
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                        <Image size={40} strokeWidth={1} style={{ color: t.textSecondary, opacity: 0.3 }} />
+                    </div>
+                )}
 
-                {project.status === 'processing' && (
+                {/* Processing overlay */}
+                {(project.status === 'processing' || project.status === 'pending') && (
                     <div style={{
                         position: 'absolute', inset: 0,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        background: 'rgba(0,0,0,0.5)',
-                        backdropFilter: 'blur(8px)',
+                        background: 'rgba(0,0,0,0.45)',
+                        backdropFilter: 'blur(4px)',
                     }}>
                         <div style={{
-                            width: 28, height: 28,
+                            width: 32, height: 32,
                             border: '3px solid rgba(255,255,255,0.2)',
                             borderTopColor: '#fff',
                             borderRadius: '50%',
@@ -179,7 +232,7 @@ const ProjectCard = ({ project, onClick, index, t }) => {
                     </div>
                 )}
 
-                {/* Options button */}
+                {/* Options */}
                 <button
                     onClick={(e) => { e.stopPropagation(); }}
                     style={{
@@ -189,8 +242,7 @@ const ProjectCard = ({ project, onClick, index, t }) => {
                         backdropFilter: 'blur(12px)',
                         border: '1px solid rgba(255,255,255,0.1)',
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        color: '#fff',
-                        cursor: 'pointer',
+                        color: '#fff', cursor: 'pointer',
                         opacity: hovered ? 1 : 0,
                         transition: 'opacity 200ms',
                     }}
@@ -200,47 +252,51 @@ const ProjectCard = ({ project, onClick, index, t }) => {
             </div>
 
             {/* Content */}
-            <div style={{ padding: 16 }}>
-                <h3 style={{
-                    fontSize: 17, fontWeight: 600,
-                    color: t.text,
-                    marginBottom: 'var(--space-2)',
-                    letterSpacing: '-0.2px',
-                    overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
-                }}>
-                    {project.title || 'Untitled Project'}
-                </h3>
+            <div style={{ padding: '14px 16px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <h3 style={{
+                        fontSize: 15, fontWeight: 600,
+                        color: t.text, margin: 0,
+                        letterSpacing: '-0.2px',
+                        overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                        flex: 1, marginRight: 8,
+                    }}>
+                        {project.title || 'Untitled Project'}
+                    </h3>
+                    {project.status && <StatusBadge status={project.status} />}
+                </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, color: t.textSecondary }}>
-                        <Calendar size={14} strokeWidth={1.75} />
-                        <span style={{ fontSize: 13 }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 5, color: t.textSecondary }}>
+                        <Calendar size={13} strokeWidth={1.75} />
+                        <span style={{ fontSize: 12 }}>
                             {new Date(project.created_at).toLocaleDateString('en-US', {
-                                month: 'short', day: 'numeric',
+                                month: 'short', day: 'numeric', year: 'numeric',
                             })}
                         </span>
                     </div>
 
-                    <div style={{ display: 'flex', gap: 6 }}>
+                    <div style={{ display: 'flex', gap: 4 }}>
                         {project.settings?.removeScratches && (
                             <span style={{
-                                padding: '3px 8px', borderRadius: 'var(--radius-sm)',
-                                fontSize: 11, fontWeight: 600,
-                                background: t.badgeBg,
-                                color: 'var(--accent)',
-                            }}>
-                                Restored
-                            </span>
+                                padding: '2px 7px', borderRadius: 'var(--radius-sm)',
+                                fontSize: 10, fontWeight: 600,
+                                background: t.badgeBg, color: 'var(--accent)',
+                            }}>Restored</span>
                         )}
                         {project.settings?.colorize && (
                             <span style={{
-                                padding: '3px 8px', borderRadius: 'var(--radius-sm)',
-                                fontSize: 11, fontWeight: 600,
-                                background: t.badgeBg,
-                                color: 'var(--accent)',
-                            }}>
-                                Colorized
-                            </span>
+                                padding: '2px 7px', borderRadius: 'var(--radius-sm)',
+                                fontSize: 10, fontWeight: 600,
+                                background: t.badgeBg, color: 'var(--accent)',
+                            }}>Colorized</span>
+                        )}
+                        {project.source === 'generated' && (
+                            <span style={{
+                                padding: '2px 7px', borderRadius: 'var(--radius-sm)',
+                                fontSize: 10, fontWeight: 600,
+                                background: 'rgba(175,82,222,0.1)', color: '#AF52DE',
+                            }}>AI Generated</span>
                         )}
                     </div>
                 </div>
@@ -250,27 +306,23 @@ const ProjectCard = ({ project, onClick, index, t }) => {
 };
 
 /* ── Filter Bar ────────────────────────────────────── */
-const FilterBar = ({ search, onSearch, t }) => (
+const FilterBar = ({ search, onSearch, count, t }) => (
     <div style={{
         display: 'flex', alignItems: 'center', gap: 'var(--space-3)',
-        height: 56, borderRadius: 'var(--radius-2xl)',
+        height: 48, borderRadius: 'var(--radius-xl)',
         padding: '0 var(--space-4)',
-        background: t.floatBg,
-        backdropFilter: 'blur(30px)',
-        WebkitBackdropFilter: 'blur(30px)',
-        border: `1px solid ${t.floatBorder}`,
+        background: t.cardBg,
+        border: `1px solid ${t.cardBorder}`,
         boxShadow: 'var(--depth-1)',
-    }}
-        className="projects-filter-bar">
+    }}>
         {/* Search */}
         <div style={{
             flex: 1, display: 'flex', alignItems: 'center', gap: 'var(--space-2)',
+            height: 34, borderRadius: 'var(--radius-lg)',
             padding: '0 var(--space-3)',
-            height: 36, borderRadius: 'var(--radius-sm)',
             background: t.inputBg,
-            border: `1px solid ${t.inputBorder}`,
         }}>
-            <Search size={16} strokeWidth={2} style={{ color: t.textSecondary, flexShrink: 0 }} />
+            <Search size={15} strokeWidth={2} style={{ color: t.textSecondary, flexShrink: 0 }} />
             <input
                 type="text"
                 placeholder="Search projects…"
@@ -284,16 +336,23 @@ const FilterBar = ({ search, onSearch, t }) => (
             />
         </div>
 
+        {/* Count badge */}
+        <span style={{
+            fontSize: 12, fontWeight: 600,
+            color: t.textSecondary, whiteSpace: 'nowrap',
+        }}>
+            {count} {count === 1 ? 'project' : 'projects'}
+        </span>
+
         {/* Sort */}
         <button style={{
-            display: 'flex', alignItems: 'center', gap: 6,
-            padding: '0 var(--space-3)', height: 36, borderRadius: 'var(--radius-sm)',
+            display: 'flex', alignItems: 'center', gap: 5,
+            padding: '0 var(--space-2)', height: 34, borderRadius: 'var(--radius-sm)',
             background: 'transparent', border: 'none',
             color: t.textSecondary, fontSize: 13, fontWeight: 500,
             cursor: 'pointer',
         }}>
             <ArrowUpDown size={14} strokeWidth={2} />
-            <span>Recent</span>
         </button>
     </div>
 );
@@ -309,9 +368,15 @@ const ProjectsPage = () => {
 
     useEffect(() => {
         const load = async () => {
-            const data = await fetchProjects();
-            setProjects(data);
-            setLoading(false);
+            try {
+                const data = await fetchProjects();
+                setProjects(data || []);
+            } catch (err) {
+                console.error('Failed to load projects:', err);
+                setProjects([]);
+            } finally {
+                setLoading(false);
+            }
         };
         load();
     }, []);
@@ -332,26 +397,22 @@ const ProjectsPage = () => {
 
     return (
         <div style={{
-            padding: '48px 48px 64px',
+            padding: 'var(--space-9) var(--space-6) var(--space-9)',
             width: '100%',
-            maxWidth: 1400,
+            maxWidth: 1200,
             margin: '0 auto',
             minHeight: '100vh',
             overflowY: 'auto',
-            background: t.bg,
-        }}
-            className="projects-page-container"
-        >
+        }}>
             {/* ── Header ─────────────────────────── */}
             <motion.div
-                initial={{ opacity: 0, y: -8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.25 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
                 style={{
                     display: 'flex', alignItems: 'center', justifyContent: 'space-between',
-                    marginBottom: 'var(--space-7)',
+                    marginBottom: 'var(--space-6)',
                 }}
-                className="projects-page-header"
             >
                 <div>
                     <h1 style={{
@@ -360,6 +421,14 @@ const ProjectsPage = () => {
                     }}>
                         Projects
                     </h1>
+                    {!loading && projects.length > 0 && (
+                        <p style={{
+                            fontSize: 14, color: t.textSecondary,
+                            margin: '4px 0 0', fontWeight: 400,
+                        }}>
+                            {projects.length} total · {projects.filter(p => p.status === 'completed').length} completed
+                        </p>
+                    )}
                 </div>
 
                 {projects.length > 0 && (
@@ -373,9 +442,9 @@ const ProjectsPage = () => {
                         <motion.span
                             whileTap={{ scale: 0.97 }}
                             style={{
-                                display: 'inline-flex', alignItems: 'center', gap: 'var(--space-2)',
-                                padding: '12px 20px',
-                                borderRadius: 'var(--radius-lg)',
+                                display: 'inline-flex', alignItems: 'center', gap: 6,
+                                padding: '10px 20px',
+                                borderRadius: 'var(--radius-xl)',
                                 background: 'var(--accent)',
                                 color: '#fff',
                                 fontSize: 14, fontWeight: 600,
@@ -394,10 +463,10 @@ const ProjectsPage = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 8 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.25, delay: 0.05 }}
-                    style={{ marginBottom: 32 }}
+                    transition={{ duration: 0.2, delay: 0.05 }}
+                    style={{ marginBottom: 24 }}
                 >
-                    <FilterBar search={search} onSearch={setSearch} t={t} />
+                    <FilterBar search={search} onSearch={setSearch} count={filtered.length} t={t} />
                 </motion.div>
             )}
 
@@ -405,21 +474,33 @@ const ProjectsPage = () => {
             {loading ? (
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: 'var(--space-7)',
-                }}
-                    className="projects-grid">
-                    {[...Array(8)].map((_, i) => <ProjectSkeleton key={i} t={t} />)}
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+                    gap: 'var(--space-5)',
+                }}>
+                    {[...Array(6)].map((_, i) => <ProjectSkeleton key={i} index={i} t={t} />)}
                 </div>
             ) : projects.length === 0 ? (
                 <EmptyState onUpload={handleUpload} t={t} />
+            ) : filtered.length === 0 ? (
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    style={{ textAlign: 'center', padding: '60px 20px' }}
+                >
+                    <Search size={40} strokeWidth={1} style={{ color: t.textSecondary, opacity: 0.4, marginBottom: 16 }} />
+                    <p style={{ fontSize: 16, fontWeight: 500, color: t.text, marginBottom: 4 }}>
+                        No matching projects
+                    </p>
+                    <p style={{ fontSize: 14, color: t.textSecondary }}>
+                        Try a different search term
+                    </p>
+                </motion.div>
             ) : (
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                    gap: 'var(--space-7)',
-                }}
-                    className="projects-grid">
+                    gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+                    gap: 'var(--space-5)',
+                }}>
                     <AnimatePresence>
                         {filtered.map((project, index) => (
                             <ProjectCard
@@ -433,6 +514,18 @@ const ProjectsPage = () => {
                     </AnimatePresence>
                 </div>
             )}
+
+            {/* Shimmer animation */}
+            <style>{`
+                @keyframes shimmer {
+                    0% { background-position: 200% 0; }
+                    100% { background-position: -200% 0; }
+                }
+                @keyframes spin {
+                    from { transform: rotate(0deg); }
+                    to { transform: rotate(360deg); }
+                }
+            `}</style>
         </div>
     );
 };

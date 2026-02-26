@@ -1,6 +1,6 @@
 import { useState, useEffect, useContext } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Sun, Moon, ChevronRight } from 'lucide-react';
+import { Menu, X, Sun, Moon, ChevronRight, Sparkles, Layers, MessageCircle, User, LogOut, LayoutDashboard, ArrowRight } from 'lucide-react';
 import Logo from '../ui/Logo';
 import Button from '../ui/Button';
 import { Link, useNavigate } from 'react-router-dom';
@@ -20,28 +20,13 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    useEffect(() => {
-        if (mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.position = 'fixed';
-            document.body.style.width = '100%';
-        } else {
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-        }
-        return () => {
-            document.body.style.overflow = '';
-            document.body.style.position = '';
-            document.body.style.width = '';
-        };
-    }, [mobileMenuOpen]);
+    // No scroll lock needed — backdrop prevents interaction
 
     const navLinks = [
-        { href: '/#features', label: 'Features' },
-        { href: '/#how-it-works', label: 'How it works' },
-        { href: '/#testimonials', label: 'Testimonials' },
-        { to: '/about', label: 'About', isLink: true },
+        { href: '/#features', label: 'Features', icon: Sparkles, accent: '#007AFF' },
+        { href: '/#how-it-works', label: 'How it works', icon: Layers, accent: '#34C759' },
+        { href: '/#testimonials', label: 'Testimonials', icon: MessageCircle, accent: '#AF52DE' },
+        { to: '/about', label: 'About', isLink: true, icon: User, accent: '#FF9500' },
     ];
 
     return (
@@ -203,113 +188,186 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* Mobile Menu — Floating Glass Panel */}
+            {/* Mobile Menu — Navbar Expansion */}
             <AnimatePresence>
                 {mobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 z-[90] md:hidden flex items-start justify-center pt-[110px] px-5"
-                        style={{ backgroundColor: 'rgba(0,0,0,0.25)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }}
-                        onClick={(e) => { if (e.target === e.currentTarget) setMobileMenuOpen(false); }}
-                    >
+                    <>
+                        {/* Backdrop */}
                         <motion.div
-                            initial={{ y: -12, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -12, opacity: 0 }}
-                            transition={{ duration: 0.22, ease: [0.25, 1, 0.5, 1] }}
-                            className="w-full max-w-[420px]"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.15 }}
+                            className="fixed inset-0 z-[89] md:hidden"
+                            style={{ backgroundColor: 'rgba(0,0,0,0.15)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)' }}
+                            onClick={() => setMobileMenuOpen(false)}
+                        />
+
+                        {/* Expanded navbar card */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            transition={{ duration: 0.15, ease: 'easeOut' }}
+                            className="fixed z-[91] md:hidden"
                             style={{
+                                top: 12, left: 16, right: 16,
                                 borderRadius: 'var(--radius-2xl)',
-                                backgroundColor: 'var(--surface-elevated)',
-                                backdropFilter: 'blur(20px) saturate(180%)',
-                                WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-                                border: '1px solid var(--border-subtle)',
-                                boxShadow: 'var(--depth-3)',
-                                overflow: 'hidden',
+                                backgroundColor: 'var(--glass-bg, rgba(255,255,255,0.75))',
+                                backdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
+                                WebkitBackdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
+                                border: '1px solid var(--glass-border, rgba(0,0,0,0.08))',
+                                boxShadow: 'var(--depth-2)',
                             }}
                         >
-                            {/* Nav Links */}
-                            <div className="p-3">
-                                {navLinks.map((link, index) =>
-                                    link.isLink ? (
-                                        <Link
-                                            key={link.to}
-                                            to={link.to}
-                                            className="flex items-center justify-between h-12 px-3 rounded-lg text-text-main text-[15px] font-medium transition-all duration-[120ms] ease-out hover:bg-[var(--fill-tertiary)] active:bg-[var(--fill-tertiary)]"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            {link.label}
-                                            <ChevronRight className="w-4 h-4 text-text-quaternary" />
-                                        </Link>
-                                    ) : (
-                                        <a
-                                            key={link.href}
-                                            href={link.href}
-                                            className="flex items-center justify-between h-12 px-3 rounded-lg text-text-main text-[15px] font-medium transition-all duration-[120ms] ease-out hover:bg-[var(--fill-tertiary)] active:bg-[var(--fill-tertiary)]"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            {link.label}
-                                            <ChevronRight className="w-4 h-4 text-text-quaternary" />
-                                        </a>
-                                    )
-                                )}
+                            {/* Header — matches navbar exactly */}
+                            <div style={{
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                height: 56, padding: '0 var(--space-4)',
+                            }}>
+                                <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center h-10 shrink-0" aria-label="FixPix Home">
+                                    <Logo />
+                                </Link>
+                                <motion.button
+                                    onClick={() => setMobileMenuOpen(false)}
+                                    whileTap={{ scale: 0.92 }}
+                                    style={{
+                                        width: 34, height: 34, borderRadius: 'var(--radius-lg, 10px)',
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        backgroundColor: 'var(--fill-tertiary)',
+                                        color: 'var(--text-secondary)',
+                                        border: 'none', cursor: 'pointer',
+                                    }}
+                                    aria-label="Close menu"
+                                >
+                                    <X size={16} strokeWidth={2.5} />
+                                </motion.button>
                             </div>
 
-                            {/* Divider */}
-                            <div className="h-px mx-4" style={{ backgroundColor: 'var(--border-subtle)' }} />
+                            {/* Separator */}
+                            <div style={{ height: 1, backgroundColor: 'var(--glass-border, rgba(0,0,0,0.08))' }} />
 
-                            {/* Theme toggle */}
-                            <div className="p-3">
+                            {/* Nav links — same style as desktop */}
+                            <div style={{ padding: '4px 8px 6px' }}>
+                                {navLinks.map((link) => {
+                                    const inner = (
+                                        <div style={{
+                                            padding: '9px 12px',
+                                            borderRadius: 'var(--radius-lg, 10px)',
+                                            fontSize: '15px',
+                                            fontWeight: 500,
+                                            color: 'var(--text-secondary)',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'space-between',
+                                        }}>
+                                            {link.label}
+                                            <ChevronRight size={16} strokeWidth={1.5} style={{ color: 'var(--text-quaternary)' }} />
+                                        </div>
+                                    );
+                                    return link.isLink ? (
+                                        <Link key={link.to} to={link.to} onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', textDecoration: 'none' }}>{inner}</Link>
+                                    ) : (
+                                        <a key={link.href} href={link.href} onClick={() => setMobileMenuOpen(false)} style={{ display: 'block', textDecoration: 'none' }}>{inner}</a>
+                                    );
+                                })}
+                            </div>
+
+                            {/* Separator */}
+                            <div style={{ height: 1, margin: '0 16px', backgroundColor: 'var(--glass-border, rgba(0,0,0,0.08))' }} />
+
+                            {/* Bottom row */}
+                            <div style={{
+                                display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+                                padding: '10px var(--space-4) 10px',
+                                gap: 8,
+                            }}>
+                                {/* Theme toggle */}
                                 <button
                                     onClick={() => { toggleTheme(); setMobileMenuOpen(false); }}
-                                    className="flex items-center justify-between w-full h-12 px-3 rounded-lg text-text-main text-[15px] font-medium transition-all duration-[120ms] ease-out hover:bg-[var(--fill-tertiary)] active:bg-[var(--fill-tertiary)]"
+                                    style={{
+                                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                        width: 34, height: 34, borderRadius: 'var(--radius-lg, 10px)',
+                                        backgroundColor: 'var(--fill-tertiary)',
+                                        color: 'var(--text-secondary)',
+                                        border: 'none', cursor: 'pointer',
+                                        flexShrink: 0,
+                                    }}
+                                    aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
                                 >
-                                    <span className="flex items-center gap-3">
-                                        {theme === 'dark' ? <Sun className="w-5 h-5 text-text-secondary" /> : <Moon className="w-5 h-5 text-text-secondary" />}
-                                        {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
-                                    </span>
+                                    {theme === 'dark' ? <Sun size={16} strokeWidth={1.75} /> : <Moon size={16} strokeWidth={1.75} />}
                                 </button>
-                            </div>
 
-                            {/* Divider */}
-                            <div className="h-px mx-4" style={{ backgroundColor: 'var(--border-subtle)' }} />
-
-                            {/* Auth Buttons */}
-                            <div className="p-4 space-y-3">
+                                {/* Auth actions */}
                                 {user ? (
-                                    <>
-                                        <div className="flex items-center gap-3 px-3 py-2">
-                                            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white text-[15px] font-semibold">
-                                                {user.username.charAt(0).toUpperCase()}
-                                            </div>
-                                            <div>
-                                                <span className="text-[15px] font-semibold text-text-main">{user.username}</span>
-                                                <span className="text-[13px] text-text-secondary block">Logged in</span>
-                                            </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginLeft: 'auto' }}>
+                                        <div style={{
+                                            width: 30, height: 30, borderRadius: '50%',
+                                            backgroundColor: 'var(--accent)',
+                                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                            color: 'white', fontSize: '12px', fontWeight: 650, flexShrink: 0,
+                                        }}>
+                                            {user.username.charAt(0).toUpperCase()}
                                         </div>
-                                        <Button variant="filled" size="lg" className="w-full justify-center" onClick={() => { navigate('/app'); setMobileMenuOpen(false); }}>
-                                            Go to Dashboard
-                                        </Button>
-                                        <Button variant="plain" size="md" className="w-full justify-center text-text-secondary" onClick={() => { logoutUser(); setMobileMenuOpen(false); }}>
-                                            Log Out
-                                        </Button>
-                                    </>
+                                        <button
+                                            onClick={() => { navigate('/app/profile'); setMobileMenuOpen(false); }}
+                                            style={{
+                                                padding: '7px 14px', borderRadius: 'var(--radius-lg, 10px)',
+                                                backgroundColor: 'var(--fill-tertiary)', color: 'var(--text-primary)',
+                                                fontSize: '13px', fontWeight: 500, border: 'none', cursor: 'pointer',
+                                            }}
+                                        >
+                                            Profile
+                                        </button>
+                                        <button
+                                            onClick={() => { navigate('/app'); setMobileMenuOpen(false); }}
+                                            style={{
+                                                padding: '7px 14px', borderRadius: 'var(--radius-lg, 10px)',
+                                                backgroundColor: 'var(--accent)', color: 'white',
+                                                fontSize: '13px', fontWeight: 600, border: 'none', cursor: 'pointer',
+                                            }}
+                                        >
+                                            Dashboard
+                                        </button>
+                                        <button
+                                            onClick={() => { logoutUser(); setMobileMenuOpen(false); }}
+                                            style={{
+                                                width: 34, height: 34, borderRadius: 'var(--radius-lg, 10px)',
+                                                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                                                backgroundColor: 'var(--fill-tertiary)',
+                                                color: 'var(--text-secondary)',
+                                                border: 'none', cursor: 'pointer',
+                                            }}
+                                            aria-label="Log out"
+                                        >
+                                            <LogOut size={15} strokeWidth={1.75} />
+                                        </button>
+                                    </div>
                                 ) : (
-                                    <>
-                                        <Link to="/signup" onClick={() => setMobileMenuOpen(false)} className="block">
-                                            <Button variant="filled" size="lg" className="w-full justify-center">Get Started</Button>
+                                    <div style={{ display: 'flex', gap: 8, marginLeft: 'auto' }}>
+                                        <Link to="/login" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
+                                            <button style={{
+                                                padding: '7px 14px', borderRadius: 'var(--radius-lg, 10px)',
+                                                backgroundColor: 'var(--fill-tertiary)', color: 'var(--text-primary)',
+                                                fontSize: '13px', fontWeight: 500, border: 'none', cursor: 'pointer',
+                                            }}>
+                                                Log In
+                                            </button>
                                         </Link>
-                                        <Link to="/login" onClick={() => setMobileMenuOpen(false)} className="block">
-                                            <Button variant="plain" size="md" className="w-full justify-center text-text-secondary">Log In</Button>
+                                        <Link to="/signup" onClick={() => setMobileMenuOpen(false)} style={{ textDecoration: 'none' }}>
+                                            <button style={{
+                                                padding: '7px 14px', borderRadius: 'var(--radius-lg, 10px)',
+                                                backgroundColor: 'var(--accent)', color: 'white',
+                                                fontSize: '13px', fontWeight: 600, border: 'none', cursor: 'pointer',
+                                            }}>
+                                                Get Started
+                                            </button>
                                         </Link>
-                                    </>
+                                    </div>
                                 )}
                             </div>
                         </motion.div>
-                    </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </>

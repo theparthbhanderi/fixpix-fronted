@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { ImageContext } from '../../context/ImageContext';
 import Logo from '../ui/Logo';
-import { Layers, Image as ImageIcon, Settings, SquareStack, Sun, Moon, Plus, LogOut, X, Home } from 'lucide-react';
+import { Layers, Image as ImageIcon, Settings, SquareStack, Sun, Moon, Plus, LogOut, X, Home, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AuthContext from '../../context/AuthContext';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -242,6 +242,12 @@ const Sidebar = ({ isOpen, onClose }) => {
 
                     <SectionLabel label="Account" />
                     <div className="space-y-1">
+                        <MenuItem
+                            icon={User}
+                            label="Profile"
+                            active={isActive('profile')}
+                            onClick={() => navigate('/app/profile')}
+                        />
                         <MenuItem
                             icon={Settings}
                             label="Settings"

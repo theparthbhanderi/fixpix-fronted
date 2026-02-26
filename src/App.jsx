@@ -17,6 +17,7 @@ const DashboardPage = React.lazy(() => import('./pages/DashboardPage'));
 const EditorPage = React.lazy(() => import('./pages/EditorPage'));
 const ProjectsPage = React.lazy(() => import('./pages/ProjectsPage'));
 const SettingsPage = React.lazy(() => import('./pages/SettingsPage'));
+const ProfilePage = React.lazy(() => import('./pages/ProfilePage'));
 const BatchProcessor = React.lazy(() => import('./components/features/batch/BatchProcessor'));
 const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const SignupPage = React.lazy(() => import('./pages/SignupPage'));
@@ -66,6 +67,7 @@ function App() {
                           <Route path="batch" element={<BatchProcessor />} />
                           <Route path="projects" element={<ProjectsPage />} />
                           <Route path="settings" element={<SettingsPage />} />
+                          <Route path="profile" element={<ProfilePage />} />
                         </Route>
 
                         {/* Admin Panel Routes */}

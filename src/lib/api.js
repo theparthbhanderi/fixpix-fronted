@@ -21,6 +21,7 @@ export const apiEndpoints = {
     token: `${API_URL}/api/token/`,
     tokenRefresh: `${API_URL}/api/token/refresh/`,
     register: `${API_URL}/api/register/`,
+    profile: `${API_URL}/api/profile/`,
 
     // Images
     images: `${API_URL}/api/images/`,

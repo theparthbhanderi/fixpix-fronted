@@ -3,67 +3,146 @@ import { X, CheckCircle, AlertCircle, Loader2, Download } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { getMediaUrl } from '../../../lib/api';
 
+const statusConfig = {
+    completed: {
+        color: '#34C759',
+        bg: 'rgba(52,199,89,0.1)',
+        label: '✓ Done',
+        barColor: '#34C759',
+    },
+    processing: {
+        color: 'var(--accent)',
+        bg: 'var(--accent-soft)',
+        label: 'Processing',
+        barColor: 'var(--accent)',
+    },
+    error: {
+        color: '#FF3B30',
+        bg: 'rgba(255,59,48,0.1)',
+        label: 'Failed',
+        barColor: '#FF3B30',
+    },
+    cancelled: {
+        color: '#FF9500',
+        bg: 'rgba(255,149,0,0.1)',
+        label: 'Cancelled',
+        barColor: '#FF9500',
+    },
+    pending: {
+        color: 'var(--text-secondary)',
+        bg: 'var(--fill-tertiary)',
+        label: 'Pending',
+        barColor: 'var(--border-subtle)',
+    },
+};
+
 const BatchQueueItem = ({ item, onRemove }) => {
+    const config = statusConfig[item.status] || statusConfig.pending;
+
     return (
         <motion.div
             layout
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            className="glass-panel p-3 rounded-xl flex items-center gap-4 group relative overflow-hidden"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, x: -20, transition: { duration: 0.15 } }}
+            style={{
+                display: 'flex', alignItems: 'center', gap: 12,
+                padding: '10px 14px',
+                borderRadius: 'var(--radius-xl)',
+                background: 'var(--surface)',
+                border: '1px solid var(--border-subtle)',
+                position: 'relative', overflow: 'hidden',
+            }}
         >
-            {/* Status Line Indicator */}
-            <div className={`absolute left-0 top-0 bottom-0 w-1 ${item.status === 'completed' ? 'bg-secondary' :
-                item.status === 'processing' ? 'bg-primary animate-pulse' :
-                    item.status === 'error' ? 'bg-red-500' :
-                        'bg-gray-300 dark:bg-gray-600'
-                }`} />
+            {/* Status bar */}
+            <div style={{
+                position: 'absolute', left: 0, top: 0, bottom: 0, width: 3,
+                background: config.barColor,
+                borderRadius: '0 2px 2px 0',
+                animation: item.status === 'processing' ? 'pulse 1.5s ease-in-out infinite' : 'none',
+            }} />
 
             {/* Thumbnail */}
-            <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-surface border border-border-light relative">
-                <img src={item.status === 'completed' ? item.resultUrl : item.preview} alt="preview" className="w-full h-full object-cover" />
+            <div style={{
+                width: 52, height: 52, borderRadius: 'var(--radius-lg)',
+                overflow: 'hidden', flexShrink: 0,
+                border: '1px solid var(--border-subtle)',
+                position: 'relative',
+            }}>
+                <img
+                    src={item.status === 'completed' && item.resultUrl ? item.resultUrl : item.preview}
+                    alt="preview"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                />
                 {item.status === 'processing' && (
-                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                        <Loader2 className="w-6 h-6 text-white animate-spin" />
+                    <div style={{
+                        position: 'absolute', inset: 0,
+                        background: 'rgba(0,0,0,0.45)',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    }}>
+                        <Loader2 size={18} style={{ color: 'white', animation: 'spin 1s linear infinite' }} />
                     </div>
                 )}
             </div>
 
             {/* Info */}
-            <div className="flex-1 min-w-0">
-                <p className="text-sm font-bold text-text-main truncate">{item.file.name}</p>
-                <div className="flex items-center gap-2 text-xs mt-1">
-                    <span className={`px-2 py-0.5 rounded-full font-medium ${item.status === 'completed' ? 'bg-secondary/10 text-secondary' :
-                        item.status === 'processing' ? 'bg-primary/10 text-primary' :
-                            item.status === 'error' ? 'bg-red-500/10 text-red-500' :
-                                'bg-gray-200 dark:bg-gray-700 text-text-secondary'
-                        }`}>
-                        {item.status.toUpperCase()}
+            <div style={{ flex: 1, minWidth: 0 }}>
+                <p style={{
+                    fontSize: 14, fontWeight: 550,
+                    color: 'var(--text-primary)', margin: 0,
+                    overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                }}>
+                    {item.file.name}
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginTop: 3 }}>
+                    <span style={{
+                        fontSize: 11, fontWeight: 600,
+                        padding: '1px 7px', borderRadius: 'var(--radius-sm)',
+                        background: config.bg, color: config.color,
+                    }}>
+                        {config.label}
                     </span>
-                    <span className="text-text-secondary">{(item.file.size / 1024 / 1024).toFixed(2)} MB</span>
+                    <span style={{ fontSize: 11, color: 'var(--text-secondary)' }}>
+                        {(item.file.size / 1024 / 1024).toFixed(1)} MB
+                    </span>
                 </div>
             </div>
 
             {/* Actions */}
-            <div className="flex items-center gap-2">
-                {item.status === 'completed' && (
+            <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                {item.status === 'completed' && item.resultUrl && (
                     <a
                         href={getMediaUrl(item.resultUrl)}
                         download={`restored_${item.file.name}`}
-                        className="p-2 rounded-full hover:bg-surface-highlight text-text-secondary hover:text-primary transition-colors"
-                        title="Download Result"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{
+                            width: 32, height: 32, borderRadius: 'var(--radius-sm)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            color: 'var(--accent)', background: 'var(--accent-soft)',
+                            border: 'none', cursor: 'pointer', textDecoration: 'none',
+                        }}
                     >
-                        <Download className="w-5 h-5" />
+                        <Download size={15} strokeWidth={2} />
                     </a>
                 )}
 
                 {item.status !== 'processing' && (
-                    <button
+                    <motion.button
+                        whileTap={{ scale: 0.9 }}
                         onClick={() => onRemove(item.id)}
-                        className="p-2 rounded-full hover:bg-red-500/10 text-text-secondary hover:text-red-500 transition-colors"
+                        style={{
+                            width: 32, height: 32, borderRadius: 'var(--radius-sm)',
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            color: 'var(--text-secondary)',
+                            background: 'transparent',
+                            border: 'none', cursor: 'pointer',
+                            transition: 'all 150ms',
+                        }}
+                        onMouseEnter={(e) => { e.currentTarget.style.color = '#FF3B30'; e.currentTarget.style.background = 'rgba(255,59,48,0.08)'; }}
+                        onMouseLeave={(e) => { e.currentTarget.style.color = 'var(--text-secondary)'; e.currentTarget.style.background = 'transparent'; }}
                     >
-                        <X className="w-5 h-5" />
-                    </button>
+                        <X size={16} strokeWidth={2} />
+                    </motion.button>
                 )}
             </div>
         </motion.div>
