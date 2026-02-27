@@ -358,6 +358,29 @@
   .ios-mobile-bg {
     background-color: rgb(var(--ios-bg));
   }
+
+  /* ─── Mobile flattening ─── */
+  @media (max-width: 767px) {
+
+    .ios-material-card,
+    .ios-card,
+    .ios-card-elevated {
+      background: transparent !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+    }
+
+    .ios-material-card:hover,
+    .ios-card:hover,
+    .ios-card-elevated:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
 }
 
 /* ===========================================
@@ -471,19 +494,13 @@ div.driver-popover.fixpix-tour-popover {
    =========================================== */
 
 .ios-pro-header {
-  background: rgba(252, 252, 254, 0.88);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 0.33px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02),
-    0 2px 8px rgba(0, 0, 0, 0.03);
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.06);
 }
 
 .dark .ios-pro-header {
-  background: rgba(28, 28, 30, 0.88);
-  border-bottom: 0.33px solid rgba(255, 255, 255, 0.06);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2),
-    0 2px 8px rgba(0, 0, 0, 0.15);
+  background: rgba(28, 28, 30, 0.98);
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.06);
 }
 
 .ios-pro-sheet {
@@ -533,74 +550,35 @@ div.driver-popover.fixpix-tour-popover {
 }
 
 /* ===========================================
-   Floating Capsule Toolbar
+   Floating Capsule Toolbar — Minimal
    =========================================== */
 
 .floating-capsule {
-  background: linear-gradient(135deg,
-      rgba(40, 40, 45, 0.90) 0%,
-      rgba(30, 30, 35, 0.86) 100%);
-  backdrop-filter: blur(var(--blur-heavy)) saturate(180%);
-  -webkit-backdrop-filter: blur(var(--blur-heavy)) saturate(180%);
-  border-radius: 20px;
-  border: var(--border-thin) solid rgba(255, 255, 255, 0.06);
-  padding: 4px;
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.04),
-    0 4px 12px rgba(0, 0, 0, 0.04),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+  border-top: 0.5px solid rgba(0, 0, 0, 0.08);
 }
 
-:root:not(.dark) .floating-capsule {
-  background: linear-gradient(135deg,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(248, 248, 252, 0.90) 100%);
-  border: var(--border-thin) solid rgba(0, 0, 0, 0.04);
-  box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.02),
-    0 4px 12px rgba(0, 0, 0, 0.03),
-    inset 0 1px 0 rgba(255, 255, 255, 0.6);
-}
-
-:root:not(.dark) .floating-capsule button {
-  color: rgba(0, 0, 0, 0.6);
+.dark .floating-capsule {
+  background: rgba(28, 28, 30, 0.96);
+  border-top: 0.5px solid rgba(255, 255, 255, 0.08);
 }
 
 .floating-tool-panel {
-  background-color: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-radius: var(--radius-2xl);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--depth-3);
+  background-color: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  isolation: isolate;
 }
 
 .dark .floating-tool-panel {
-  background-color: rgba(24, 24, 27, 0.94);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--depth-3);
-}
-
-/* ===========================================
-   High-Contrast Capsule Icons
-   =========================================== */
-
-.capsule-icon-inactive {
-  color: rgba(60, 60, 67, 0.6) !important;
-}
-
-.dark .capsule-icon-inactive {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-
-.capsule-label-inactive {
-  color: rgba(60, 60, 67, 0.7);
-}
-
-.dark .capsule-label-inactive {
-  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(28, 28, 30, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
 }
 
 /* ===========================================

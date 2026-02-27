@@ -1,88 +1,112 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft, Download } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ChevronLeft, Download, FilePlus2 } from 'lucide-react';
 import { useImage } from '../../context/ImageContext';
-import { cn } from '../../lib/utils';
 import MobileGenerateFAB from './MobileGenerateFAB';
 
 /**
- * iOS Pro Mobile Header
- * 
- * Premium refinements:
- * - Thinner, more minimal height
- * - Subtle blur material
- * - Minimal back button (iOS native style)
- * - Generate button inline (right side, only when features queued)
- * - Light download icon
+ * Mobile Header — Premium Frosted Glass
+ * Height: 44px + safe area. Frosted glass with gradient accent.
  */
 const MobileEditorHeader = ({
-    title = 'Restoration',
+    title = 'FixPix',
     onBack,
     onExport,
-    className
+    onReset,
 }) => {
-    const { processedImage, isProcessing } = useImage();
-
-    const showDownload = !!processedImage && !isProcessing;
+    const { processedImage, originalImage, isProcessing } = useImage();
+    const showDownload = (!!processedImage || !!originalImage) && !isProcessing;
 
     return (
-        <motion.header
-            initial={{ y: -60 }}
-            animate={{ y: 0 }}
-            transition={{ duration: 0.22, ease: [0.25, 1, 0.5, 1] }}
-            className={cn(
-                "fixed top-0 left-0 right-0 z-50",
-                "ios-pro-header",
-                className
-            )}
+        <header
+            className="mobile-premium-header"
+            style={{
+                position: 'fixed',
+                top: 0,
+                left: 0,
+                right: 0,
+                zIndex: 50,
+            }}
         >
-            {/* Safe area spacer for notch */}
-            <div className="h-safe-top" />
+            {/* Safe area spacer */}
+            <div style={{ height: 'env(safe-area-inset-top, 0px)' }} />
 
-            {/* Header content */}
-            <div className="flex items-center justify-between h-11 px-4">
-                {/* Left: Minimal iOS Back button */}
+            {/* Header bar */}
+            <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                height: 48,
+                padding: '0 14px',
+            }}>
+                {/* Left: Back */}
                 <motion.button
                     onClick={onBack}
-                    whileTap={{ scale: 0.97 }}
-                    className="flex items-center gap-1.5 -ml-1 text-[var(--accent)] active:opacity-60 transition-opacity"
+                    whileTap={{ scale: 0.94 }}
+                    style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 3,
+                        border: 'none',
+                        background: 'none',
+                        cursor: 'pointer',
+                        color: 'var(--accent, #007AFF)',
+                        fontSize: 15,
+                        fontWeight: 500,
+                        padding: 0,
+                        WebkitTapHighlightColor: 'transparent',
+                    }}
                 >
-                    <ChevronLeft size={18} strokeWidth={2} />
-                    <span className="text-[15px] font-normal">Back</span>
+                    <ChevronLeft size={20} strokeWidth={2.25} />
+                    <span>Back</span>
                 </motion.button>
 
                 {/* Center: Title */}
-                <h1 className="absolute left-1/2 -translate-x-1/2 text-[15px] font-semibold text-[var(--text-primary)] tracking-[0]">
+                <h1 style={{
+                    position: 'absolute',
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    fontSize: 16,
+                    fontWeight: 700,
+                    color: 'var(--text-primary)',
+                    margin: 0,
+                    letterSpacing: '-0.025em',
+                    background: 'linear-gradient(135deg, var(--text-primary) 0%, var(--accent, #007AFF) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                }}>
                     {title}
                 </h1>
 
-                {/* Right: Generate + Download */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
+                {/* Right: Actions */}
+                <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                     <MobileGenerateFAB />
-                    <AnimatePresence>
-                        {showDownload && onExport && (
-                            <motion.button
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                exit={{ opacity: 0, scale: 0.9 }}
-                                transition={{ duration: 0.14, ease: 'easeOut' }}
-                                onClick={onExport}
-                                whileTap={{ scale: 0.97 }}
-                                className="p-1.5 -mr-1.5 active:opacity-60 transition-opacity"
-                                aria-label="Export"
-                            >
-                                <Download
-                                    size={20}
-                                    strokeWidth={2}
-                                    className="text-[var(--accent)]"
-                                />
-                            </motion.button>
-                        )}
-                    </AnimatePresence>
+
+                    {showDownload && onExport && (
+                        <motion.button
+                            onClick={onExport}
+                            whileTap={{ scale: 0.92 }}
+                            aria-label="Export"
+                            className="header-action-btn"
+                        >
+                            <Download size={17} strokeWidth={2} />
+                        </motion.button>
+                    )}
+
+                    {originalImage && onReset && (
+                        <motion.button
+                            onClick={onReset}
+                            whileTap={{ scale: 0.92 }}
+                            aria-label="New Project"
+                            className="header-action-btn"
+                        >
+                            <FilePlus2 size={16} strokeWidth={2} />
+                        </motion.button>
+                    )}
                 </div>
             </div>
-        </motion.header>
+        </header>
     );
 };
 
 export default MobileEditorHeader;
-

@@ -33,7 +33,7 @@ export const CommandProvider = ({ children }) => {
     // ─────────────────────────────────────────────────────────────
 
     const [activeMode, setActiveMode] = useState(null); // 'eraser', 'crop', null
-    const [expandedZone, setExpandedZone] = useState('restore');
+    const [expandedZone, setExpandedZone] = useState('create');
 
     // ─────────────────────────────────────────────────────────────
     // STATE: Tool Shared State

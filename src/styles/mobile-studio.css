@@ -1,0 +1,296 @@
+/* ═══════════════════════════════════════════════════════════════════
+   MOBILE STUDIO — Premium Theme (Light & Dark)
+   Applied ONLY on mobile editor page (.mobile-studio-canvas)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── BASE THEME VARIABLES (Light Mode Default) ────────────────── */
+.mobile-studio-canvas {
+    --mc-bg: #F2F2F7;
+    --mc-text-main: rgba(0, 0, 0, 0.9);
+    --mc-text-muted: rgba(0, 0, 0, 0.45);
+    --mc-glass-bg: rgba(255, 255, 255, 0.82);
+    --mc-glass-border: rgba(0, 0, 0, 0.08);
+    --mc-glass-border-light: rgba(0, 0, 0, 0.04);
+    --mc-panel-shadow: 0 -8px 40px rgba(0, 0, 0, 0.08);
+    --mc-tab-inactive: rgba(0, 0, 0, 0.35);
+    --mc-handle: rgba(0, 0, 0, 0.15);
+    --mc-card-bg: rgba(0, 0, 0, 0.03);
+    --mc-ambient-bottom: rgba(242, 242, 247, 0.95);
+    --mc-icon-bg: rgba(255, 255, 255, 0.9);
+    --mc-icon-color: rgba(0, 0, 0, 0.5);
+
+    /* System overrides */
+    --surface: rgba(255, 255, 255, 0.95);
+    --surface-secondary: rgba(242, 242, 247, 0.9);
+    --tool-card-bg: var(--mc-card-bg);
+    --tool-card-border: var(--mc-glass-border-light);
+
+    background: var(--mc-bg) !important;
+    color: var(--mc-text-main) !important;
+}
+
+/* ─── DARK MODE OVERRIDES ────────────────────────────────────── */
+.dark .mobile-studio-canvas {
+    --mc-bg: #0C0C0E;
+    --mc-text-main: rgba(255, 255, 255, 0.92);
+    --mc-text-muted: rgba(255, 255, 255, 0.45);
+    --mc-glass-bg: rgba(18, 18, 20, 0.88);
+    --mc-glass-border: rgba(255, 255, 255, 0.08);
+    --mc-glass-border-light: rgba(255, 255, 255, 0.04);
+    --mc-panel-shadow: 0 -8px 40px rgba(0, 0, 0, 0.5);
+    --mc-tab-inactive: rgba(255, 255, 255, 0.35);
+    --mc-handle: rgba(255, 255, 255, 0.2);
+    --mc-card-bg: rgba(255, 255, 255, 0.03);
+    --mc-ambient-bottom: rgba(12, 12, 14, 0.95);
+    --mc-icon-bg: rgba(28, 28, 30, 0.8);
+    --mc-icon-color: rgba(255, 255, 255, 0.5);
+
+    /* System overrides */
+    --surface: rgba(28, 28, 30, 0.95);
+    --surface-secondary: rgba(44, 44, 46, 0.9);
+    --text-primary: var(--mc-text-main);
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --text-tertiary: rgba(255, 255, 255, 0.35);
+    --glass-border: var(--mc-glass-border);
+    --glass-bg: rgba(28, 28, 30, 0.8);
+}
+
+/* ─── PREMIUM GLASS HEADER ──────────────────────────────────── */
+.mobile-studio-canvas .mobile-premium-header {
+    background: var(--mc-glass-bg) !important;
+    backdrop-filter: blur(28px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+    border-bottom: 0.5px solid var(--mc-glass-border) !important;
+}
+
+.mobile-studio-canvas .mobile-premium-header h1 {
+    color: var(--mc-text-main) !important;
+}
+
+.dark .mobile-studio-canvas .mobile-premium-header h1 {
+    background: linear-gradient(135deg, #fff 0%, #007AFF 80%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* ─── GLASS TAB BAR ─────────────────────────────────────────── */
+.mobile-studio-tabbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    background: var(--mc-glass-bg);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    border-top: 0.5px solid var(--mc-glass-border);
+}
+
+/* ─── GLASS SNAP PANEL ──────────────────────────────────────── */
+.mobile-studio-panel {
+    position: fixed;
+    left: 6px;
+    right: 6px;
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 60px);
+    border-radius: 24px;
+    background: var(--mc-glass-bg);
+    backdrop-filter: blur(40px) saturate(150%);
+    -webkit-backdrop-filter: blur(40px) saturate(150%);
+    border: 0.5px solid var(--mc-glass-border);
+    box-shadow:
+        var(--mc-panel-shadow),
+        0 0 0 0.5px var(--mc-glass-border-light),
+        inset 0 1px 0 var(--mc-glass-border-light);
+    z-index: 45;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    will-change: height;
+}
+
+.mobile-panel-scroll {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: 10px 14px 28px;
+}
+
+/* Scrollbar styling for panel */
+.mobile-panel-scroll::-webkit-scrollbar {
+    width: 3px;
+}
+
+.mobile-panel-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.mobile-panel-scroll::-webkit-scrollbar-thumb {
+    background: var(--mc-glass-border);
+    border-radius: 3px;
+}
+
+/* ─── FLOATING ACTION PILL ──────────────────────────────────── */
+.mobile-action-pill {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: calc(env(safe-area-inset-bottom, 0px) + 72px);
+    z-index: 44;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 46px;
+    padding: 0 6px;
+    border-radius: 999px;
+    background: var(--mc-glass-bg);
+    backdrop-filter: blur(20px) saturate(150%);
+    -webkit-backdrop-filter: blur(20px) saturate(150%);
+    border: 0.5px solid var(--mc-glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark .mobile-action-pill {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── GRADIENT GENERATE BUTTON ──────────────────────────────── */
+.generate-gradient-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #007AFF 0%, #5856D6 50%, #AF52DE 100%);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.3);
+}
+
+.generate-gradient-btn::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.2) 50%, transparent 100%);
+    transform: translateX(-100%);
+    animation: btn-shimmer 2s ease-in-out infinite;
+}
+
+@keyframes btn-shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ─── TOOL CARDS TEXT COLORS ────────────────────────────────── */
+.mobile-studio-canvas .tool-card,
+.mobile-studio-canvas [class*="space-y"]>div[style*="border-radius"] {
+    color: var(--mc-text-main);
+}
+
+/* Theme aware text inside panel */
+.mobile-studio-panel,
+.mobile-studio-panel * {
+    color: var(--mc-text-main);
+}
+
+.mobile-studio-panel .text-\[var\(--ios-text-primary\)\],
+.mobile-studio-panel .text-\[var\(--ios-text-secondary\)\],
+.mobile-studio-panel .text-\[var\(--ios-text-tertiary\)\] {
+    color: var(--mc-text-muted) !important;
+}
+
+.mobile-studio-panel span[style*="fontSize: 16"],
+.mobile-studio-panel span[style*="font-size: 16px"] {
+    color: var(--mc-text-main) !important;
+}
+
+.mobile-studio-panel p {
+    color: var(--mc-text-muted) !important;
+}
+
+/* ─── IMAGE WORKSPACE — Theme Aware Canvas ─────────────────── */
+.mobile-studio-canvas .bg-background\/50 {
+    background: transparent !important;
+}
+
+/* Upload card styling */
+.mobile-studio-canvas .rounded-\[36px\] {
+    background: var(--mc-card-bg) !important;
+    border-color: var(--mc-glass-border) !important;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.05), inset 0 1px 0 var(--mc-glass-border-light) !important;
+}
+
+.dark .mobile-studio-canvas .rounded-\[36px\] {
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3), inset 0 1px 0 var(--mc-glass-border-light) !important;
+}
+
+.mobile-studio-canvas .rounded-\[36px\] h3 {
+    color: var(--mc-text-main) !important;
+}
+
+.mobile-studio-canvas .rounded-\[36px\] p {
+    color: var(--mc-text-muted) !important;
+}
+
+/* Upload icon container */
+.mobile-studio-canvas .rounded-\[28px\] {
+    background: var(--mc-icon-bg) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.dark .mobile-studio-canvas .rounded-\[28px\] {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+.mobile-studio-canvas .rounded-\[28px\] svg {
+    color: var(--mc-icon-color) !important;
+}
+
+/* ─── PREMIUM ADJUSTMENTS — Slider styling ──────────────────── */
+.mobile-studio-panel input[type="range"] {
+    accent-color: #007AFF;
+}
+
+/* AppleSlider track override */
+.mobile-studio-panel .relative.h-\[6px\],
+.mobile-studio-panel [class*="slider"] {
+    background: var(--mc-glass-border) !important;
+}
+
+/* ─── SUBTLE AMBIENT GLOW ───────────────────────────────────── */
+.mobile-studio-canvas::before {
+    content: '';
+    position: fixed;
+    top: -40%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+    background: radial-gradient(ellipse, rgba(0, 122, 255, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.mobile-studio-canvas::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, var(--mc-ambient-bottom) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+}

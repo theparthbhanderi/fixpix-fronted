@@ -1,15 +1,24 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Wand2, Zap, Eraser, Maximize2, Palette, Layers } from 'lucide-react';
+import { Wand2, Zap, Eraser, Maximize2, Palette, Layers, ImagePlus, Sparkles } from 'lucide-react';
 
 const features = [
+    {
+        title: 'AI Text to Image',
+        description: 'Transform words into beautiful, high-resolution artwork. From realistic photography to cinematic scenes, simply describe your vision and let AI generate stunning visuals in seconds.',
+        icon: ImagePlus,
+        accent: '#7C3AED',
+        accentSoft: 'rgba(124, 58, 237, 0.08)',
+        size: 'large',
+        badge: 'NEW',
+    },
     {
         title: 'Auto Colorization',
         description: 'Breathe life into black & white memories. Our deep learning model adds natural, historically-accurate color.',
         icon: Palette,
         accent: '#AF52DE',
         accentSoft: 'rgba(175, 82, 222, 0.08)',
-        size: 'large',
+        size: 'small',
     },
     {
         title: 'Face Enhancement',
@@ -49,7 +58,7 @@ const features = [
         icon: Layers,
         accent: '#5AC8FA',
         accentSoft: 'rgba(90, 200, 250, 0.08)',
-        size: 'large',
+        size: 'small',
     },
 ];
 
@@ -130,9 +139,27 @@ const FeatureCard = ({ feature, index, isSlider = false }) => (
                     lineHeight: 1.3,
                     color: 'var(--text-primary)',
                     marginBottom: '6px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
                 }}
             >
                 {feature.title}
+                {feature.badge && (
+                    <span style={{
+                        fontSize: '9px',
+                        fontWeight: 700,
+                        padding: '2px 7px',
+                        borderRadius: '6px',
+                        backgroundColor: `${feature.accent}15`,
+                        color: feature.accent,
+                        letterSpacing: '0.5px',
+                        textTransform: 'uppercase',
+                        lineHeight: 1.4,
+                    }}>
+                        {feature.badge}
+                    </span>
+                )}
             </h3>
 
             {/* Description */}
@@ -301,7 +328,31 @@ const FeaturesGrid = () => (
                     }}
                 >
                     Our AI engine understands your photos and applies the perfect restoration — automatically.
+                    {' '}Now including AI-powered text-to-image creation for limitless creativity.
                 </motion.p>
+
+                {/* Hero highlight strip */}
+                <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.14, duration: 0.4 }}
+                    style={{
+                        marginTop: '16px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        padding: '6px 14px',
+                        borderRadius: '999px',
+                        backgroundColor: 'rgba(124, 58, 237, 0.06)',
+                        color: '#7C3AED',
+                        fontSize: '13px',
+                        fontWeight: 600,
+                    }}
+                >
+                    <Sparkles size={14} strokeWidth={2} />
+                    Create from imagination — no photo required.
+                </motion.div>
             </div>
 
             {/* Desktop: Bento Grid */}

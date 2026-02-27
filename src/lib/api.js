@@ -62,6 +62,9 @@ export const apiEndpoints = {
     generateImage: `${API_URL}/api/images/generate/`,
     generationStatus: `${API_URL}/api/images/generation_status/`,
 
+    // Cloudflare Text-to-Image (via Django proxy)
+    cloudflareGenerate: `${API_URL}/api/generate/text-to-image/`,
+
     // Admin Panel
     admin: {
         dashboard: `${API_URL}/api/admin/dashboard/`,

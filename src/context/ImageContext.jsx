@@ -472,6 +472,102 @@ export const ImageProvider = ({ children }) => {
         }
     };
 
+    /**
+     * Generate an image from text using Cloudflare Worker API (via Django proxy)
+     * @param {string} prompt - Text description
+     * @param {string} style - 'realistic' | 'cinematic' | 'portrait' | 'anime'
+     * @param {string} aspectRatio - '1:1' | '4:5' | '16:9'
+     * @returns {Promise<boolean>} Success flag
+     */
+    const generateFromText = async (prompt, style = 'realistic', aspectRatio = '1:1') => {
+        if (!prompt?.trim()) {
+            setGenerationError('Please enter a prompt');
+            return false;
+        }
+
+        setIsGenerating(true);
+        setGenerationError(null);
+        setGenerationStatus('Generating image...');
+
+        try {
+            const response = await fetch(apiEndpoints.cloudflareGenerate, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    prompt: prompt.trim(),
+                    style,
+                    aspectRatio,
+                }),
+            });
+
+            if (!response.ok) {
+                const errData = await response.json().catch(() => ({}));
+                const errMsg = errData.error || `Generation failed (${response.status})`;
+                setGenerationError(errMsg);
+                return false;
+            }
+
+            const data = await response.json();
+
+            if (!data.image) {
+                setGenerationError('No image returned from API');
+                return false;
+            }
+
+            // Convert base64 data URL to blob URL for canvas
+            const res = await fetch(data.image);
+            const blob = await res.blob();
+            const blobUrl = URL.createObjectURL(blob);
+
+            setOriginalImage(blobUrl);
+            setProcessedImage(null);
+            setGenerationStatus('Image generated!');
+            setSettings(defaultSettings); // reset editing settings
+
+            return true;
+        } catch (error) {
+            console.error('Image generation error:', error);
+            setGenerationError(error.message || 'Generation failed');
+            return false;
+        } finally {
+            setIsGenerating(false);
+            setTimeout(() => setGenerationStatus(''), 2000);
+        }
+    };
+
+    /**
+     * Reset entire project — clear image, history, settings, return to clean state
+     */
+    const resetProject = () => {
+        // Revoke blob URLs to free memory
+        if (originalImage && originalImage.startsWith('blob:')) {
+            URL.revokeObjectURL(originalImage);
+        }
+        if (processedImage && processedImage.startsWith('blob:')) {
+            URL.revokeObjectURL(processedImage);
+        }
+
+        // Clear all image state
+        setOriginalImage(null);
+        setProcessedImage(null);
+        setCurrentProject(null);
+        setIsProcessing(false);
+        setIsCropping(false);
+        setIsMasking(false);
+        setMaskImage(null);
+
+        // Clear generation state
+        setIsGenerating(false);
+        setGenerationStatus('');
+        setGenerationError(null);
+
+        // Reset settings to defaults (this also resets history)
+        setSettings(defaultSettings);
+
+        // Release processing lock
+        processingLockRef.current = false;
+    };
+
     const [theme, setTheme] = useState(() => {
         if (typeof window !== 'undefined') {
             const saved = localStorage.getItem('theme');
@@ -526,8 +622,11 @@ export const ImageProvider = ({ children }) => {
         generationError,
         generationLimits,
         generateImage,
+        generateFromText,
         fetchGenerationLimits,
-        setGenerationError
+        setGenerationError,
+        resetProject,
+        setProcessedImage
     }), [
         originalImage,
         processedImage,
@@ -555,7 +654,9 @@ export const ImageProvider = ({ children }) => {
         generationError,
         generationLimits,
         generateImage,
-        fetchGenerationLimits
+        generateFromText,
+        fetchGenerationLimits,
+        resetProject
     ]);
 
     return (

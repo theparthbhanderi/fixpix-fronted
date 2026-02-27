@@ -218,7 +218,7 @@ const SettingsPage = () => {
         }}
             className="settings-page-container"
         >
-            <div style={{ maxWidth: 760, margin: '0 auto' }}>
+            <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
                 {/* ── Page Title ── */}
                 <motion.h1

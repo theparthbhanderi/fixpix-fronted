@@ -77,7 +77,7 @@ const BatchProcessor = () => {
     return (
         <div style={{
             width: '100%', minHeight: '100vh', overflowY: 'auto',
-            padding: 'var(--space-9) var(--space-6)',
+            padding: 'var(--space-7) var(--space-6)',
         }}>
             <div style={{ maxWidth: 1100, margin: '0 auto' }}>
 

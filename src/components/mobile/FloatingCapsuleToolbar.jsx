@@ -1,11 +1,9 @@
-import React, { memo, useState, useCallback, useEffect, useRef, useMemo } from 'react';
-import { motion, AnimatePresence, useDragControls } from 'framer-motion';
+import React, { memo, useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { useCommand } from '../../context/CommandContext';
 import { useImage } from '../../context/ImageContext';
-import { Wand2, Sparkles, Palette, SlidersHorizontal, X } from 'lucide-react';
-import { cn } from '../../lib/utils';
+import { Wand2, Sparkles, Palette, SlidersHorizontal, Download } from 'lucide-react';
 
-// Import new Tool Components
 import {
     RestoreTools,
     EnhanceTools,
@@ -14,344 +12,340 @@ import {
 } from '../tools';
 
 /**
- * FLOATING CAPSULE TOOLBAR - Performance Optimized
- * 
- * Optimizations:
- * - React.memo on all components
- * - Faster spring animations (500 stiffness)
- * - Memoized callbacks
- * - Reduced backdrop blur for mobile performance
- * - GPU-accelerated transforms
+ * PREMIUM MOBILE TOOLBAR — v4.1 (Theme Aware Edition)
+ *
+ * Supports both beautiful crisp Light glass and deep Dark glass.
  */
 
-// ═══════════════════════════════════════════════════════════════
-// CONSTANTS
-// ═══════════════════════════════════════════════════════════════
-
-const CATEGORIES = [
+const TABS = [
+    { id: 'create', label: 'Create', icon: Palette, color: '#AF52DE' },
     { id: 'restore', label: 'Restore', icon: Wand2, color: '#007AFF' },
-    { id: 'enhance', label: 'Enhance', icon: Sparkles, color: '#34C759' },
-    { id: 'create', label: 'Creative', icon: Palette, color: '#FF9500' },
-    { id: 'adjust', label: 'Adjust', icon: SlidersHorizontal, color: '#AF52DE' },
+    { id: 'enhance', label: 'Enhance', icon: Sparkles, color: '#FF9F0A' },
+    { id: 'adjust', label: 'Adjust', icon: SlidersHorizontal, color: '#30D158' },
 ];
 
-const CATEGORY_TOOL_IDS = {
-    restore: ['faceRestoration', 'removeScratches', 'colorize'],
-    enhance: ['upscaleX', 'autoEnhance'],
-    create: ['removeBackground', 'generativeFill'],
-    adjust: ['brightness', 'contrast', 'saturation'],
-};
+const SNAP = { HALF: 48, EXPANDED: 74 };
+const SPRING = { type: 'spring', stiffness: 300, damping: 30, mass: 0.7 };
 
-// ═══════════════════════════════════════════════════════════════
-// CAPSULE ICON BUTTON - High Visibility, Performance Optimized
-// ═══════════════════════════════════════════════════════════════
+// ─── PREMIUM TAB BUTTON ──────────────────────────
 
-const CapsuleIconButton = memo(({ category, isActive, activeCount, onTap }) => {
-    const { id, label, icon: Icon, color } = category;
-
-    const handleClick = useCallback(() => {
-        onTap(id);
-    }, [onTap, id]);
-
-    // Memoized styles
-    const iconStyle = useMemo(() => ({
-        color: isActive ? color : undefined,
-        opacity: isActive ? 1 : 0.5
-    }), [isActive, color]);
-
+const TabButton = memo(({ tab, isActive, onTap }) => {
+    const Icon = tab.icon;
     return (
         <motion.button
-            onClick={handleClick}
-            whileTap={{ scale: 0.97 }}
-            className={cn(
-                "relative w-14 h-10 flex flex-col items-center justify-center gap-[1px] rounded-xl transition-all duration-150"
-            )}
+            onClick={() => onTap(tab.id)}
+            whileTap={{ scale: 0.88 }}
+            transition={{ duration: 0.08 }}
             style={{
-                background: 'transparent',
-                boxShadow: 'none',
-                willChange: 'transform'
+                flex: 1,
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 2,
+                padding: '8px 0 6px',
+                border: 'none',
+                background: 'none',
+                cursor: 'pointer',
+                WebkitTapHighlightColor: 'transparent',
+                position: 'relative',
             }}
         >
-            {/* Icon with high visibility */}
-            <motion.div
-                animate={{
-                    scale: isActive ? 1.05 : 1,
-                    y: isActive ? -1 : 0
-                }}
-                transition={{ duration: 0.12, ease: [0.25, 1, 0.5, 1] }}
-                className="relative"
-            >
+            {/* Icon with glow background for active state */}
+            <div style={{
+                position: 'relative',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 36,
+                height: 28,
+            }}>
+                {isActive && (
+                    <motion.div
+                        layoutId="mobile-tab-glow"
+                        style={{
+                            position: 'absolute',
+                            inset: -2,
+                            borderRadius: 10,
+                            background: `linear-gradient(135deg, ${tab.color}20, ${tab.color}10)`,
+                            border: `1px solid ${tab.color}25`,
+                        }}
+                        transition={SPRING}
+                    />
+                )}
                 <Icon
-                    size={20}
-                    strokeWidth={isActive ? 2 : 1.75}
-                    className={cn(
-                        "transition-colors duration-150",
-                        !isActive && "capsule-icon-inactive"
-                    )}
-                    style={iconStyle}
-                />
-            </motion.div>
-
-            {/* Label - always visible */}
-            <span className={cn(
-                "text-[8px] font-medium tracking-tight transition-colors duration-150",
-                isActive
-                    ? "text-[var(--text-primary)]"
-                    : "capsule-label-inactive"
-            )}>
-                {label}
-            </span>
-
-            {/* Active indicator — count badge or dot */}
-            {activeCount > 0 && !isActive && (
-                <div
-                    className="absolute -top-0.5 -right-0.5 min-w-[14px] h-[14px] rounded-full flex items-center justify-center"
+                    size={21}
+                    strokeWidth={isActive ? 2.2 : 1.5}
                     style={{
-                        backgroundColor: color,
-                        fontSize: 9,
-                        fontWeight: 700,
-                        color: '#fff',
-                        lineHeight: 1,
-                        padding: '0 3px',
+                        color: isActive ? tab.color : 'var(--mc-tab-inactive)',
+                        transition: 'color 150ms ease',
+                        position: 'relative',
+                        zIndex: 1,
+                        filter: isActive ? `drop-shadow(0 0 6px ${tab.color}40)` : 'none',
                     }}
-                >
-                    {activeCount}
-                </div>
-            )}
-            {isActive && (
-                <motion.div
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 0.12, ease: [0.25, 1, 0.5, 1] }}
-                    className="absolute -bottom-1.5 w-1 h-1 rounded-full"
-                    style={{ backgroundColor: color }}
                 />
-            )}
+            </div>
+
+            <span style={{
+                fontSize: 10,
+                fontWeight: isActive ? 600 : 400,
+                color: isActive ? tab.color : 'var(--mc-tab-inactive)',
+                transition: 'all 120ms ease',
+                letterSpacing: '0.02em',
+                lineHeight: 1,
+                textTransform: 'uppercase',
+            }}>
+                {tab.label}
+            </span>
         </motion.button>
     );
 });
 
-CapsuleIconButton.displayName = 'CapsuleIconButton';
+TabButton.displayName = 'TabButton';
 
-// ═══════════════════════════════════════════════════════════════
-// MAIN COMPONENT
-// ═══════════════════════════════════════════════════════════════
+// ─── PREMIUM SNAP PANEL ──────────────────────────
 
-const FloatingCapsuleToolbar = memo(() => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const [activeCategory, setActiveCategory] = useState(() => {
-        try { return localStorage.getItem('fixpix-editor-tab'); } catch { return null; }
-    });
-    const dragControls = useDragControls();
-    const panelRef = useRef(null);
+const SnapPanel = memo(({ activeTab, panelHeight, onClose }) => {
+    const dragStartY = useRef(0);
+    const [localHeight, setLocalHeight] = useState(panelHeight);
 
-    const { setExpandedZone, pendingQueue } = useCommand();
-    const { isProcessing } = useImage();
+    useEffect(() => { setLocalHeight(panelHeight); }, [panelHeight]);
 
-    // Sync with command context
-    useEffect(() => {
-        if (activeCategory) {
-            setExpandedZone(activeCategory);
-        }
-    }, [activeCategory, setExpandedZone]);
-
-    // ─────────────────────────────────────────────────────────────
-    // HANDLERS - Memoized
-    // ─────────────────────────────────────────────────────────────
-
-    const handleIconTap = useCallback((categoryId) => {
-        if (activeCategory === categoryId && isExpanded) {
-            setIsExpanded(false);
-            setActiveCategory(null);
-            try { localStorage.removeItem('fixpix-editor-tab'); } catch { }
-        } else {
-            setActiveCategory(categoryId);
-            setIsExpanded(true);
-            try { localStorage.setItem('fixpix-editor-tab', categoryId); } catch { }
-        }
-    }, [activeCategory, isExpanded]);
-
-    const handleClose = useCallback(() => {
-        setIsExpanded(false);
-        setActiveCategory(null);
-    }, []);
-
-    const handleBackdropTap = useCallback((e) => {
-        if (e.target === e.currentTarget) {
-            handleClose();
-        }
-    }, [handleClose]);
-
-    const handleDragEnd = useCallback((event, info) => {
-        if (info.velocity.y > 300 || info.offset.y > 100) {
-            handleClose();
-        }
-    }, [handleClose]);
-
-    const handleDragStart = useCallback((e) => {
-        dragControls.start(e);
-    }, [dragControls]);
-
-    // ─────────────────────────────────────────────────────────────
-    // TOOL CONTENT RENDERER - Memoized
-    // ─────────────────────────────────────────────────────────────
-    const toolContent = useMemo(() => {
-        switch (activeCategory) {
+    const content = useMemo(() => {
+        switch (activeTab) {
+            case 'create': return <CreateTools />;
             case 'restore': return <RestoreTools />;
             case 'enhance': return <EnhanceTools />;
-            case 'create': return <CreateTools />;
             case 'adjust': return <AdjustTools />;
             default: return null;
         }
-    }, [activeCategory]);
+    }, [activeTab]);
 
-    const activeConfig = useMemo(() =>
-        CATEGORIES.find(c => c.id === activeCategory),
-        [activeCategory]);
+    const tabConfig = TABS.find(t => t.id === activeTab);
 
-    const activeColor = activeConfig?.color || '#007AFF';
-    const ActiveIcon = activeConfig?.icon;
+    const handleTouchStart = useCallback((e) => {
+        dragStartY.current = e.touches[0].clientY;
+    }, []);
 
-    // Count active tools per category
-    const categoryToolCounts = useMemo(() => {
-        const counts = {};
-        for (const cat of CATEGORIES) {
-            const toolIds = CATEGORY_TOOL_IDS[cat.id] || [];
-            counts[cat.id] = toolIds.filter(id => pendingQueue && id in pendingQueue).length;
+    const handleTouchEnd = useCallback((e) => {
+        const delta = dragStartY.current - e.changedTouches[0].clientY;
+        if (delta > 50) setLocalHeight(SNAP.EXPANDED);
+        else if (delta < -50) onClose();
+    }, [onClose]);
+
+    return (
+        <motion.div
+            key={activeTab}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: `${localHeight}vh`, opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={SPRING}
+            className="mobile-studio-panel"
+        >
+            {/* Drag Handle + Title */}
+            <div
+                onTouchStart={handleTouchStart}
+                onTouchEnd={handleTouchEnd}
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    padding: '10px 18px 0',
+                    cursor: 'grab',
+                    touchAction: 'none',
+                    userSelect: 'none',
+                    flexShrink: 0,
+                }}
+            >
+                {/* Premium grab handle */}
+                <div style={{
+                    width: 40,
+                    height: 4,
+                    borderRadius: 2,
+                    background: 'var(--mc-handle)',
+                    marginBottom: 14,
+                }} />
+
+                {/* Section Header with accent color */}
+                <div style={{
+                    width: '100%',
+                    paddingBottom: 12,
+                    borderBottom: '1px solid var(--mc-glass-border)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 10,
+                }}>
+                    {tabConfig && (() => {
+                        const TabIcon = tabConfig.icon;
+                        return (
+                            <div style={{
+                                width: 32,
+                                height: 32,
+                                borderRadius: 10,
+                                background: `linear-gradient(135deg, ${tabConfig.color}25, ${tabConfig.color}10)`,
+                                border: `1px solid ${tabConfig.color}20`,
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                            }}>
+                                <TabIcon size={16} strokeWidth={2} style={{ color: tabConfig.color }} />
+                            </div>
+                        );
+                    })()}
+                    <span style={{
+                        fontSize: 16,
+                        fontWeight: 700,
+                        color: 'var(--mc-text-main)',
+                        letterSpacing: '-0.02em',
+                    }}>
+                        {tabConfig?.label}
+                    </span>
+                </div>
+            </div>
+
+            {/* Content — fade+slide on tab change */}
+            <motion.div
+                key={activeTab}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, ease: [0.25, 1, 0.5, 1] }}
+                className="mobile-panel-scroll"
+            >
+                {content}
+            </motion.div>
+        </motion.div>
+    );
+});
+
+SnapPanel.displayName = 'SnapPanel';
+
+// ─── FLOATING ACTION DOCK ────────────────────────
+
+const FloatingActionDock = memo(({ onExport, isPanelOpen }) => {
+    const { processedImage, originalImage, isProcessing } = useImage();
+    const { pendingQueue, commitCommands } = useCommand();
+
+    const hasImage = !!originalImage;
+    const hasProcessed = !!processedImage;
+    const hasAnyImage = hasImage || hasProcessed;
+    const stepCount = pendingQueue ? Object.keys(pendingQueue).length : 0;
+    const canGenerate = stepCount > 0 && hasImage && !isProcessing;
+
+    if (!hasImage || isPanelOpen) return null;
+
+    const handleGenerate = async () => {
+        if (canGenerate && commitCommands) await commitCommands();
+    };
+
+    return (
+        <motion.div
+            initial={{ y: 20, opacity: 0, scale: 0.9 }}
+            animate={{ y: 0, opacity: 1, scale: 1 }}
+            exit={{ y: 12, opacity: 0, scale: 0.95 }}
+            transition={SPRING}
+            className="mobile-action-pill"
+        >
+            {canGenerate && (
+                <motion.button
+                    whileTap={{ scale: 0.93 }}
+                    onClick={handleGenerate}
+                    className="generate-gradient-btn"
+                >
+                    <Sparkles size={14} strokeWidth={2.25} />
+                    Generate
+                </motion.button>
+            )}
+
+            {hasAnyImage && (
+                <motion.button
+                    whileTap={{ scale: 0.93 }}
+                    onClick={onExport}
+                    style={{
+                        display: 'flex', alignItems: 'center', gap: 6,
+                        padding: '8px 18px', border: 'none', borderRadius: 999,
+                        background: 'var(--mc-glass-border)',
+                        color: 'var(--mc-text-main)',
+                        fontSize: 13, fontWeight: 600, cursor: 'pointer',
+                        WebkitTapHighlightColor: 'transparent',
+                    }}
+                >
+                    <Download size={14} strokeWidth={2} />
+                    Save
+                </motion.button>
+            )}
+        </motion.div>
+    );
+});
+
+FloatingActionDock.displayName = 'FloatingActionDock';
+
+// ─── MAIN COMPONENT ─────────────────────────────
+
+const FloatingCapsuleToolbar = memo(({ onExport }) => {
+    const [activeTab, setActiveTab] = useState('create');
+    const [isPanelOpen, setIsPanelOpen] = useState(true);
+    const [panelHeight, setPanelHeight] = useState(SNAP.HALF);
+
+    const { setExpandedZone } = useCommand();
+    const { isProcessing } = useImage();
+
+    useEffect(() => {
+        if (activeTab) setExpandedZone(activeTab);
+    }, [activeTab, setExpandedZone]);
+
+    const handleTabTap = useCallback((tabId) => {
+        if (activeTab === tabId && isPanelOpen) {
+            setIsPanelOpen(false);
+        } else {
+            setActiveTab(tabId);
+            setPanelHeight(SNAP.HALF);
+            setIsPanelOpen(true);
         }
-        return counts;
-    }, [pendingQueue]);
+    }, [activeTab, isPanelOpen]);
 
-    // Memoized animation configs
-    const panelAnimation = useMemo(() => ({
-        initial: { y: 24, opacity: 0 },
-        animate: { y: 0, opacity: 1 },
-        exit: { y: 12, opacity: 0 },
-        transition: {
-            duration: 0.22,
-            ease: [0.25, 1, 0.5, 1]
-        }
-    }), []);
+    const handleClose = useCallback(() => {
+        setIsPanelOpen(false);
+    }, []);
 
-    const capsuleAnimation = useMemo(() => ({
-        initial: { y: 40, opacity: 0 },
-        animate: { y: 0, opacity: 1 },
-        transition: {
-            duration: 0.2,
-            ease: [0.25, 1, 0.5, 1],
-            delay: 0.05
-        }
-    }), []);
-
-    // ═══════════════════════════════════════════════════════════════
-    // RENDER
-    // ═══════════════════════════════════════════════════════════════
     return (
         <>
-            {/* BACKDROP - Dims background when expanded */}
             <AnimatePresence>
-                {isExpanded && (
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.15 }}
-                        className="fixed inset-0 z-40 bg-black/[0.03]"
-                        onClick={handleBackdropTap}
+                <FloatingActionDock onExport={onExport} isPanelOpen={isPanelOpen} />
+            </AnimatePresence>
+
+            <AnimatePresence mode="wait">
+                {isPanelOpen && activeTab && (
+                    <SnapPanel
+                        activeTab={activeTab}
+                        panelHeight={panelHeight}
+                        onClose={handleClose}
                     />
                 )}
             </AnimatePresence>
 
-            {/* EXPANDED TOOL PANEL - Slides up above capsule */}
-            <AnimatePresence>
-                {isExpanded && activeCategory && (
-                    <motion.div
-                        ref={panelRef}
-                        {...panelAnimation}
-                        drag="y"
-                        dragControls={dragControls}
-                        dragListener={false}
-                        dragConstraints={{ top: 0, bottom: 0 }}
-                        dragElastic={0.1}
-                        onDragEnd={handleDragEnd}
-                        className="fixed left-3 right-3 z-50 floating-tool-panel"
-                        style={{
-                            bottom: 'calc(env(safe-area-inset-bottom, 20px) + 84px)',
-                            marginBottom: 12,
-                            maxHeight: '50vh',
-                            willChange: 'transform',
-                            opacity: isProcessing ? 0.5 : 1,
-                            pointerEvents: isProcessing ? 'none' : 'auto',
-                            transition: 'opacity 180ms ease',
-                        }}
-                    >
-                        {/* Drag Handle */}
-                        <div className="flex justify-center pt-2 pb-0.5">
-                            <div className="w-7 h-1 rounded-full bg-current opacity-15" />
-                        </div>
-
-                        {/* Panel Header */}
-                        <div
-                            className="flex items-center justify-between px-4 py-1.5 border-b border-black/5 dark:border-white/5"
-                            onPointerDown={handleDragStart}
-                        >
-                            <div className="flex items-center gap-3">
-                                <div
-                                    className="w-8 h-8 rounded-xl flex items-center justify-center"
-                                    style={{ backgroundColor: `${activeColor}15` }}
-                                >
-                                    {ActiveIcon && (
-                                        <ActiveIcon size={18} style={{ color: activeColor }} strokeWidth={2} />
-                                    )}
-                                </div>
-                                <span className="text-[15px] font-semibold text-[var(--text-primary)]">
-                                    {activeConfig?.label}
-                                </span>
-                            </div>
-
-                            <motion.button
-                                whileTap={{ scale: 0.95 }}
-                                onClick={handleClose}
-                                className="w-8 h-8 rounded-full flex items-center justify-center bg-black/5 dark:bg-white/10"
-                            >
-                                <X size={16} strokeWidth={2.5} className="text-[var(--text-secondary)]" />
-                            </motion.button>
-                        </div>
-
-                        {/* Panel Content */}
-                        <div className="px-4 pt-2 pb-4 overflow-y-auto overscroll-contain space-y-2" style={{ maxHeight: 'calc(50vh - 48px)' }}>
-                            {toolContent}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-
-            {/* FLOATING CAPSULE - Always visible, 4 icons */}
-            <motion.div
-                {...capsuleAnimation}
-                className="fixed left-4 right-4 z-50 floating-capsule"
-                style={{
-                    bottom: 'calc(env(safe-area-inset-bottom, 20px) + 16px)',
-                    willChange: 'transform'
-                }}
-            >
-                {/* Icons container */}
-                <div className="flex items-center justify-evenly py-1">
-                    {CATEGORIES.map((category) => (
-                        <CapsuleIconButton
-                            key={category.id}
-                            category={category}
-                            isActive={activeCategory === category.id && isExpanded}
-                            activeCount={categoryToolCounts[category.id] || 0}
-                            onTap={handleIconTap}
+            {/* ─── DARK/LIGHT GLASS TAB BAR ─── */}
+            <div className="mobile-studio-tabbar">
+                <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    height: 54,
+                    opacity: isProcessing ? 0.35 : 1,
+                    pointerEvents: isProcessing ? 'none' : 'auto',
+                    transition: 'opacity 200ms ease',
+                }}>
+                    {TABS.map((tab) => (
+                        <TabButton
+                            key={tab.id}
+                            tab={tab}
+                            isActive={activeTab === tab.id}
+                            onTap={handleTabTap}
                         />
                     ))}
                 </div>
-            </motion.div>
+            </div>
         </>
     );
 });
 
 FloatingCapsuleToolbar.displayName = 'FloatingCapsuleToolbar';
-
 export default FloatingCapsuleToolbar;

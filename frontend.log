@@ -3,17 +3,97 @@
 > vite
 
 
-  VITE v7.3.0  ready in 192 ms
+  VITE v7.3.0  ready in 536 ms
 
   ➜  Local:   http://localhost:5173/
   ➜  Network: use --host to expose
-7:11:28 PM [vite] (client) hmr update /src/pages/DashboardLayout.jsx, /src/index.css
-7:16:43 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
-7:16:45 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
-7:16:47 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
-7:17:00 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
-7:17:05 PM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
-7:18:32 PM [vite] (client) hmr update /src/index.css, /src/components/layout/ToolsPanel.jsx
-7:20:02 PM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
-7:20:04 PM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
-7:20:04 PM [vite] (client) hmr update /src/App.jsx, /src/pages/ProjectsPage.jsx, /src/pages/LoginPage.jsx, /src/pages/SignupPage.jsx, /src/components/features/batch/BatchProcessor.jsx, /src/components/layout/Navbar.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/layout/ToolsPanel.jsx, /src/components/features/MobileToolsSheet.jsx, /src/components/features/OnboardingTour.jsx, /src/components/layout/Sidebar.jsx
+1:10:20 PM [vite] (client) hmr update /src/context/AuthContext.jsx, /src/context/ImageContext.jsx, /src/components/features/ExportModal.jsx, /src/index.css
+1:10:20 PM [vite] (client) hmr invalidate /src/context/AuthContext.jsx Could not Fast Refresh ("default" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:10:20 PM [vite] (client) hmr update /src/App.jsx, /src/context/ImageContext.jsx, /src/utils/PrivateRoute.jsx, /src/components/layout/Navbar.jsx, /src/components/sections/Hero.jsx, /src/components/layout/Sidebar.jsx, /src/pages/DashboardPage.jsx
+1:10:20 PM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:10:20 PM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+1:10:48 PM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+1:10:48 PM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:10:48 PM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+1:10:48 PM [vite] (client) hmr invalidate /src/context/CommandContext.jsx Could not Fast Refresh ("useCommand" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+1:10:48 PM [vite] (client) hmr update /src/App.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/editor/PendingQueue.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/editor/ToolCard.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/features/RestorationOverlay.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+1:12:07 PM [vite] (client) hmr update /src/index.css, /src/components/tools/CreateTools.jsx
+1:13:00 PM [vite] (client) hmr update /src/index.css
+8:41:49 AM [vite] (client) hmr update /src/context/AuthContext.jsx, /src/context/ImageContext.jsx, /src/components/features/ExportModal.jsx, /src/index.css
+8:41:50 AM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+8:42:01 AM [vite] (client) hmr invalidate /src/context/AuthContext.jsx Could not Fast Refresh ("default" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:42:01 AM [vite] (client) hmr update /src/App.jsx, /src/context/ImageContext.jsx, /src/utils/PrivateRoute.jsx, /src/components/layout/Navbar.jsx, /src/components/sections/Hero.jsx, /src/components/layout/Sidebar.jsx, /src/pages/DashboardPage.jsx
+8:42:01 AM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:42:01 AM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+8:54:17 AM [vite] (client) hmr update /src/index.css, /src/components/tools/CreateTools.jsx
+8:54:19 AM [vite] (client) hmr update /src/index.css
+8:59:19 AM [vite] (client) hmr update /src/context/AuthContext.jsx, /src/context/ImageContext.jsx, /src/components/features/ExportModal.jsx, /src/components/features/batch/BatchProcessor.jsx, /src/components/features/batch/BatchQueueItem.jsx, /src/index.css
+8:59:19 AM [vite] (client) hmr invalidate /src/context/AuthContext.jsx Could not Fast Refresh ("default" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:59:19 AM [vite] (client) hmr update /src/App.jsx, /src/context/ImageContext.jsx, /src/utils/PrivateRoute.jsx, /src/components/layout/Navbar.jsx, /src/components/sections/Hero.jsx, /src/components/layout/Sidebar.jsx, /src/pages/DashboardPage.jsx, /src/components/features/batch/BatchProcessor.jsx
+8:59:19 AM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:59:19 AM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx, /src/pages/ProjectsPage.jsx, /src/components/features/batch/BatchProcessor.jsx
+8:59:21 AM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+8:59:21 AM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:59:21 AM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx, /src/pages/ProjectsPage.jsx, /src/components/features/batch/BatchProcessor.jsx
+8:59:21 AM [vite] (client) hmr invalidate /src/context/CommandContext.jsx Could not Fast Refresh ("useCommand" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+8:59:21 AM [vite] (client) hmr update /src/App.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/editor/PendingQueue.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/editor/ToolCard.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/features/RestorationOverlay.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+9:30:20 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:30:23 AM [vite] (client) hmr update /src/index.css, /src/components/editor/InspectorTabs.jsx
+9:30:26 AM [vite] (client) hmr update /src/index.css
+9:30:28 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/FloatingCapsuleToolbar.jsx
+9:30:46 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:30:49 AM [vite] (client) hmr update /src/index.css, /src/components/editor/InspectorPanel.jsx
+9:30:51 AM [vite] (client) hmr update /src/context/CommandContext.jsx, /src/index.css
+9:30:51 AM [vite] (client) hmr invalidate /src/context/CommandContext.jsx Could not Fast Refresh ("useCommand" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:30:51 AM [vite] (client) hmr update /src/App.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/editor/PendingQueue.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/editor/ToolCard.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/features/RestorationOverlay.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+9:30:53 AM [vite] (client) hmr update /src/index.css
+9:31:09 AM [vite] (client) hmr update /src/index.css, /src/components/tools/CreateTools.jsx
+9:31:11 AM [vite] (client) hmr update /src/index.css
+9:31:31 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:40:51 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+9:41:05 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+9:44:26 AM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+9:44:27 AM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:44:27 AM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx, /src/pages/ProjectsPage.jsx, /src/components/features/batch/BatchProcessor.jsx
+9:44:27 AM [vite] (client) hmr invalidate /src/context/CommandContext.jsx Could not Fast Refresh ("useCommand" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+9:44:27 AM [vite] (client) hmr update /src/App.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/editor/PendingQueue.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/editor/ToolCard.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/features/RestorationOverlay.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+9:45:00 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:45:38 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:46:07 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/MobileEditorHeader.jsx
+9:46:34 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:48:19 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:48:37 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:49:03 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+9:49:21 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/MobileEditorHeader.jsx
+9:57:01 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/FloatingCapsuleToolbar.jsx
+9:57:39 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/MobileEditorHeader.jsx
+9:58:20 AM [vite] (client) hmr update /src/index.css
+9:58:48 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+10:00:55 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/FloatingCapsuleToolbar.jsx
+10:01:16 AM [vite] (client) hmr update /src/pages/EditorPage.jsx, /src/index.css
+10:01:34 AM [vite] (client) hmr update /src/index.css
+10:06:35 AM [vite] (client) hmr update /src/index.css, /src/components/mobile/FloatingCapsuleToolbar.jsx
+10:07:36 AM [vite] (client) hmr update /src/index.css
+10:11:12 AM [vite] (client) hmr update /src/index.css
+10:20:24 AM [vite] (client) hmr update /src/index.css, /src/components/layout/Navbar.jsx
+10:23:09 AM [vite] (client) hmr update /src/index.css, /src/components/sections/FeaturesGrid.jsx
+10:28:49 AM [vite] (client) hmr update /src/index.css, /src/components/layout/Navbar.jsx
+10:34:04 AM [vite] (client) hmr update /src/index.css, /src/components/layout/Navbar.jsx
+10:35:25 AM [vite] (client) hmr update /src/index.css, /src/components/layout/Navbar.jsx
+10:40:07 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+10:47:00 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+10:47:37 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+10:49:21 AM [vite] (client) hmr update /src/index.css, /src/components/features/ExportModal.jsx
+11:01:45 AM [vite] (client) hmr update /src/context/ImageContext.jsx, /src/index.css
+11:01:45 AM [vite] (client) hmr invalidate /src/context/ImageContext.jsx Could not Fast Refresh ("ImageContext" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:01:45 AM [vite] (client) hmr update /src/App.jsx, /src/context/CommandContext.jsx, /src/components/layout/Navbar.jsx, /src/components/layout/Sidebar.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/features/OnboardingTour.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/mobile/MobileEditorHeader.jsx, /src/components/features/ExportModal.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/AdjustTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/mobile/MobileGenerateFAB.jsx, /src/pages/ProjectsPage.jsx, /src/components/features/batch/BatchProcessor.jsx
+11:01:46 AM [vite] (client) hmr invalidate /src/context/CommandContext.jsx Could not Fast Refresh ("useCommand" export is incompatible). Learn more at https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react#consistent-components-exports
+11:01:46 AM [vite] (client) hmr update /src/App.jsx, /src/pages/EditorPage.jsx, /src/components/editor/GenerateButton.jsx, /src/components/editor/PendingQueue.jsx, /src/components/features/ImageWorkspace.jsx, /src/components/mobile/FloatingCapsuleToolbar.jsx, /src/components/editor/FloatingCommandBar.jsx, /src/components/editor/InspectorPanel.jsx, /src/components/editor/ToolCard.jsx, /src/components/tools/RestoreTools.jsx, /src/components/tools/CreateTools.jsx, /src/components/tools/EnhanceTools.jsx, /src/components/features/RestorationOverlay.jsx, /src/components/mobile/MobileGenerateFAB.jsx
+11:01:56 AM [vite] (client) hmr update /src/index.css, /src/components/tools/CreateTools.jsx
+11:01:56 AM [vite] (client) hmr update /src/index.css, /src/components/tools/CreateTools.jsx
+11:01:58 AM [vite] (client) hmr update /src/index.css
+11:07:52 AM [vite] (client) hmr update /src/pages/DashboardLayout.jsx, /src/index.css
+11:07:54 AM [vite] (client) hmr update /src/index.css, /src/components/layout/Sidebar.jsx
+11:08:10 AM [vite] (client) hmr update /src/pages/SettingsPage.jsx, /src/index.css
+11:08:14 AM [vite] (client) hmr update /src/pages/ProfilePage.jsx, /src/index.css
+11:08:16 AM [vite] (client) hmr update /src/components/features/batch/BatchProcessor.jsx, /src/index.css

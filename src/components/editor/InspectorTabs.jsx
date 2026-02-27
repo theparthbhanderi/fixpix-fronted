@@ -14,16 +14,16 @@ import { Wand2, Sparkles, Palette, SlidersHorizontal } from 'lucide-react';
  */
 
 const tabs = [
-    { id: 'restore', label: 'Restore', icon: Wand2 },
-    { id: 'enhance', label: 'Enhance', icon: Sparkles },
-    { id: 'create', label: 'Create', icon: Palette },
-    { id: 'adjust', label: 'Adjust', icon: SlidersHorizontal },
+  { id: 'create', label: 'Create', icon: Palette },
+  { id: 'restore', label: 'Restore', icon: Wand2 },
+  { id: 'enhance', label: 'Enhance', icon: Sparkles },
+  { id: 'adjust', label: 'Adjust', icon: SlidersHorizontal },
 ];
 
 const InspectorTabs = ({ activeTab, onTabChange, collapsed = false }) => {
-    const activeIndex = tabs.findIndex(t => t.id === activeTab);
+  const activeIndex = tabs.findIndex(t => t.id === activeTab);
 
-    const styleBlock = `
+  const styleBlock = `
       .inspector-tabs-capsule {
         display: flex;
         position: sticky;
@@ -81,48 +81,48 @@ const InspectorTabs = ({ activeTab, onTabChange, collapsed = false }) => {
       }
     `;
 
-    return (
-        <>
-        <style dangerouslySetInnerHTML={{ __html: styleBlock }} />
-        <div className="inspector-tabs-capsule">
-            {tabs.map((tab) => {
-                const Icon = tab.icon;
-                const isActive = activeTab === tab.id;
+  return (
+    <>
+      <style dangerouslySetInnerHTML={{ __html: styleBlock }} />
+      <div className="inspector-tabs-capsule">
+        {tabs.map((tab) => {
+          const Icon = tab.icon;
+          const isActive = activeTab === tab.id;
 
-                return (
-                    <motion.button
-                        key={tab.id}
-                        className={`inspector-tab-btn ${isActive ? 'active' : ''}`}
-                        onClick={(e) => {
-                            onTabChange(tab.id);
-                        }}
-                        whileTap={{ scale: 0.97 }}
-                        transition={{ duration: 0.12 }}
-                    >
-                        <Icon size={18} strokeWidth={isActive ? 2 : 1.75} />
-                        {!collapsed && (
-                            <AnimatePresence mode="wait">
-                                <motion.span 
-                                    key={tab.id + "-label"}
-                                    initial={{ opacity: 0, x: -8 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    exit={{ opacity: 0, x: 8 }}
-                                    transition={{ duration: 0.12 }}
-                                    style={{
-                                        fontSize: 13,
-                                        fontWeight: 500,
-                                    }}
-                                >
-                                    {tab.label}
-                                </motion.span>
-                            </AnimatePresence>
-                        )}
-                    </motion.button>
-                );
-            })}
-        </div>
-        </>
-    );
+          return (
+            <motion.button
+              key={tab.id}
+              className={`inspector-tab-btn ${isActive ? 'active' : ''}`}
+              onClick={(e) => {
+                onTabChange(tab.id);
+              }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.12 }}
+            >
+              <Icon size={18} strokeWidth={isActive ? 2 : 1.75} />
+              {!collapsed && (
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={tab.id + "-label"}
+                    initial={{ opacity: 0, x: -8 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 8 }}
+                    transition={{ duration: 0.12 }}
+                    style={{
+                      fontSize: 13,
+                      fontWeight: 500,
+                    }}
+                  >
+                    {tab.label}
+                  </motion.span>
+                </AnimatePresence>
+              )}
+            </motion.button>
+          );
+        })}
+      </div>
+    </>
+  );
 };
 
 export default InspectorTabs;

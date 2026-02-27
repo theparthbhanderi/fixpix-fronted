@@ -35,7 +35,7 @@ const InspectorPanel = ({
     onTabChange: controlledOnTabChange
 }) => {
     // Support both controlled and uncontrolled modes
-    const [internalTab, setInternalTab] = useState('restore');
+    const [internalTab, setInternalTab] = useState('create');
     const activeTab = controlledActiveTab ?? internalTab;
     const setActiveTab = controlledOnTabChange ?? setInternalTab;
 

@@ -171,9 +171,9 @@ const Sidebar = ({ isOpen, onClose }) => {
                     width: '260px',
                     transform: isOpen ? 'translateX(0)' : (typeof window !== 'undefined' && window.innerWidth < 768 ? 'translateX(-100%)' : 'translateX(0)'),
                     /* Solid floating surface */
-                    margin: '24px 0 24px 24px',
-                    top: '24px',
-                    height: 'calc(100vh - 48px)',
+                    margin: '16px 0 16px 16px',
+                    top: '16px',
+                    height: 'calc(100vh - 32px)',
                     alignSelf: 'start',
                     borderRadius: 'var(--radius-2xl)',
                     backgroundColor: 'var(--surface)',

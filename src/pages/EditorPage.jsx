@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import {
     Wand2, Sparkles, Palette, SlidersHorizontal,
-    Download, Undo2, Redo2, Columns, ChevronLeft
+    Download, Undo2, Redo2, ChevronLeft, FilePlus2
 } from 'lucide-react';
 
 // Editor Components
@@ -34,14 +34,16 @@ import { useImage } from '../context/ImageContext';
 import useKeyboardShortcuts from '../hooks/useKeyboardShortcuts';
 
 import '../styles/studio-system.css';
+import '../styles/mobile-overrides.css';
+import '../styles/mobile-studio.css'; // Premium Dark Studio Theme
 
 /* ────────────────────────────────────────────────────
    TAB DEFINITIONS
    ──────────────────────────────────────────────────── */
 const tabs = [
+    { id: 'create', label: 'Create', icon: Palette },
     { id: 'restore', label: 'Restore', icon: Wand2 },
     { id: 'enhance', label: 'Enhance', icon: Sparkles },
-    { id: 'create', label: 'Create', icon: Palette },
     { id: 'adjust', label: 'Adjust', icon: SlidersHorizontal },
 ];
 
@@ -55,8 +57,19 @@ const LeftToolsPanel = ({
 }) => {
     const {
         undo, redo, canUndo, canRedo,
-        showComparison, setShowComparison
+        showComparison, setShowComparison,
+        originalImage, resetProject
     } = useImage();
+
+    const hasImage = !!originalImage;
+
+    const handleResetProject = () => {
+        if (hasImage) {
+            if (!window.confirm('Start a new project? Unsaved changes will be lost.')) return;
+        }
+        resetProject();
+        onTabChange('create');
+    };
 
     const activeIndex = tabs.findIndex(t => t.id === activeTab);
 
@@ -106,8 +119,8 @@ const LeftToolsPanel = ({
                 {[
                     { icon: Undo2, label: 'Undo', onClick: undo, disabled: !canUndo },
                     { icon: Redo2, label: 'Redo', onClick: redo, disabled: !canRedo },
-                    { icon: Columns, label: 'Compare', onClick: () => setShowComparison?.(!showComparison), active: showComparison },
                     { icon: Download, label: 'Export', onClick: onExport },
+                    { icon: FilePlus2, label: 'New Project', onClick: handleResetProject },
                 ].map((btn, i) => {
                     const Icon = btn.icon;
                     const isDisabled = isProcessing || btn.disabled;
@@ -117,7 +130,7 @@ const LeftToolsPanel = ({
                             onClick={btn.onClick}
                             disabled={isDisabled}
                             whileTap={!isDisabled ? { scale: 0.96 } : {}}
-                            whileHover={!isDisabled ? { background: 'rgba(0,122,255,0.08)' } : {}}
+                            whileHover={!isDisabled ? { background: btn.danger ? 'rgba(255,59,48,0.08)' : 'rgba(0,122,255,0.08)' } : {}}
                             title={btn.label}
                             style={{
                                 display: 'flex',
@@ -130,7 +143,7 @@ const LeftToolsPanel = ({
                                 opacity: isDisabled ? 0.3 : btn.active ? 1 : 0.6,
                                 transition: 'all 150ms ease',
                                 background: btn.active ? 'rgba(0,122,255,0.08)' : 'transparent',
-                                color: btn.active ? '#007AFF' : 'inherit',
+                                color: btn.danger && !isDisabled ? '#FF3B30' : btn.active ? '#007AFF' : 'inherit',
                             }}
                         >
                             <Icon size={20} strokeWidth={1.75} />
@@ -275,12 +288,12 @@ const EditorContent = () => {
     const [isMobile, setIsMobile] = useState(false);
     const [quickStartDone, setQuickStartDone] = useState(false);
     const [showExportModal, setShowExportModal] = useState(false);
-    const [activeTab, setActiveTab] = useState('restore');
+    const [activeTab, setActiveTab] = useState('create');
     const navigate = useNavigate();
 
     const { commitCommands } = useCommand();
     const {
-        originalImage, isGenerating,
+        originalImage, isGenerating, resetProject,
         undo, redo, canUndo, canRedo,
         zoom, setZoom,
         showComparison, setShowComparison
@@ -293,6 +306,13 @@ const EditorContent = () => {
         return () => window.removeEventListener('resize', checkMobile);
     }, []);
 
+    // Smart tab switching: when user uploads an image, switch to Restore
+    useEffect(() => {
+        if (originalImage && activeTab === 'create') {
+            setActiveTab('restore');
+        }
+    }, [originalImage]);
+
     const handleGenerate = async () => {
         if (commitCommands) await commitCommands();
     };
@@ -300,13 +320,31 @@ const EditorContent = () => {
     const handleZoomIn = () => setZoom?.(Math.min((zoom || 1) + 0.25, 3));
     const handleZoomOut = () => setZoom?.(Math.max((zoom || 1) - 0.25, 0.5));
     const handleZoomReset = () => setZoom?.(1);
+    const handleResetProject = () => {
+        if (originalImage) {
+            if (!window.confirm('Start a new project? Unsaved changes will be lost.')) return;
+        }
+        resetProject();
+        setActiveTab('create');
+    };
+
+    // Cmd+N / Ctrl+N shortcut for new project
+    useEffect(() => {
+        const handler = (e) => {
+            if ((e.metaKey || e.ctrlKey) && e.key === 'n') {
+                e.preventDefault();
+                handleResetProject();
+            }
+        };
+        window.addEventListener('keydown', handler);
+        return () => window.removeEventListener('keydown', handler);
+    }, [originalImage]);
 
     const { isPanning } = useKeyboardShortcuts({
         onUndo: undo, onRedo: redo,
         onSave: handleExport, onExport: handleExport,
         onProcess: handleGenerate,
         onCancel: () => setShowExportModal(false),
-        onToggleCompare: () => setShowComparison?.(!showComparison),
         onZoomIn: handleZoomIn, onZoomOut: handleZoomOut, onZoomReset: handleZoomReset,
         onTabChange: setActiveTab,
         enabled: !isMobile
@@ -315,17 +353,25 @@ const EditorContent = () => {
     /* ── MOBILE ── */
     if (isMobile) {
         return (
-            <div className="fixed inset-0 flex flex-col ios-mobile-bg">
+            <div className="fixed inset-0 flex flex-col mobile-studio-canvas">
                 <MobileEditorHeader
-                    title="Restoration"
+                    title="FixPix"
                     onBack={() => navigate('/app')}
                     onExport={handleExport}
+                    onReset={handleResetProject}
                 />
-                <div className="flex-1 relative overflow-hidden flex items-center justify-center" style={{ paddingTop: 68, paddingLeft: 12, paddingRight: 12, paddingBottom: 100 }}>
+                <div
+                    className="flex-1 relative overflow-hidden flex items-center justify-center"
+                    style={{
+                        paddingTop: 56,
+                        paddingLeft: 8,
+                        paddingRight: 8,
+                        paddingBottom: 62,
+                    }}
+                >
                     <ImageWorkspace />
                 </div>
-                <FloatingCapsuleToolbar />
-                <QuickStartModal onClose={() => setQuickStartDone(true)} />
+                <FloatingCapsuleToolbar onExport={handleExport} />
                 <AnimatePresence>
                     {showExportModal && <ExportModal onClose={() => setShowExportModal(false)} />}
                 </AnimatePresence>

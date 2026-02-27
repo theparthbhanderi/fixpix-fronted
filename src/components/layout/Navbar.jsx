@@ -13,6 +13,7 @@ const Navbar = () => {
     const { user, logoutUser } = useContext(AuthContext);
     const { theme, toggleTheme } = useContext(ImageContext);
     const navigate = useNavigate();
+    const isDark = theme === 'dark';
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 10);
@@ -41,13 +42,15 @@ const Navbar = () => {
                     style={{
                         padding: '0 var(--space-4)',
                         borderRadius: 'var(--radius-2xl)',
-                        backgroundColor: 'var(--glass-bg, rgba(255, 255, 255, 0.75))',
-                        backdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
-                        WebkitBackdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
-                        border: '1px solid var(--glass-border, rgba(0, 0, 0, 0.08))',
-                        boxShadow: 'var(--navbar-inner-highlight, none), var(--depth-2)',
-                        willChange: 'backdrop-filter',
-                        transition: 'height 250ms cubic-bezier(0.25, 1, 0.5, 1)',
+                        backgroundColor: isDark ? 'rgba(15,15,18,0.75)' : '#ffffff',
+                        backdropFilter: isDark ? 'blur(18px) saturate(150%)' : 'none',
+                        WebkitBackdropFilter: isDark ? 'blur(18px) saturate(150%)' : 'none',
+                        border: isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.06)',
+                        boxShadow: isDark ? '0 4px 24px rgba(0,0,0,0.3)' : '0 4px 16px rgba(0,0,0,0.05)',
+                        transform: 'translateZ(0)',
+                        backfaceVisibility: 'hidden',
+                        willChange: 'transform',
+                        transition: 'background-color 200ms ease, border-color 200ms ease, box-shadow 200ms ease',
                     }}
                 >
                     {/* LEFT: Logo */}
@@ -213,11 +216,13 @@ const Navbar = () => {
                             style={{
                                 top: 12, left: 16, right: 16,
                                 borderRadius: 'var(--radius-2xl)',
-                                backgroundColor: 'var(--glass-bg, rgba(255,255,255,0.75))',
-                                backdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
-                                WebkitBackdropFilter: 'var(--glass-blur, blur(30px) saturate(150%))',
-                                border: '1px solid var(--glass-border, rgba(0,0,0,0.08))',
-                                boxShadow: 'var(--depth-2)',
+                                backgroundColor: isDark ? 'rgba(15,15,18,0.85)' : '#ffffff',
+                                backdropFilter: isDark ? 'blur(18px) saturate(150%)' : 'none',
+                                WebkitBackdropFilter: isDark ? 'blur(18px) saturate(150%)' : 'none',
+                                border: isDark ? '1px solid rgba(255,255,255,0.08)' : '1px solid rgba(0,0,0,0.06)',
+                                boxShadow: isDark ? '0 4px 24px rgba(0,0,0,0.35)' : '0 4px 16px rgba(0,0,0,0.06)',
+                                transform: 'translateZ(0)',
+                                backfaceVisibility: 'hidden',
                             }}
                         >
                             {/* Header — matches navbar exactly */}

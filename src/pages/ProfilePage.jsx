@@ -571,7 +571,7 @@ const ProfilePage = () => {
                 overflowY: 'auto',
                 padding: 'var(--space-9) var(--space-6)',
             }}>
-                <div style={{ maxWidth: 760, margin: '0 auto' }}>
+                <div style={{ maxWidth: 800, margin: '0 auto' }}>
 
                     {/* Page Title */}
                     <motion.h1

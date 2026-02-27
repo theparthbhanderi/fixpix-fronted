@@ -22,15 +22,11 @@ const DashboardLayout = () => {
     return (
         <div
             style={{
-                display: isMobileRestoration ? 'block' : (isMobile ? 'flex' : 'grid'),
-                flexDirection: isMobile ? 'column' : undefined,
-                gridTemplateColumns: !isMobile && !isMobileRestoration ? 'auto 1fr' : undefined,
-                gap: !isMobile ? 'var(--space-7)' : undefined,
+                display: isMobileRestoration ? 'block' : 'flex',
+                flexDirection: isMobile ? 'column' : 'row',
                 height: '100vh',
                 overflow: 'hidden',
                 backgroundColor: 'var(--bg-primary)',
-                maxWidth: '1600px',
-                margin: '0 auto',
                 width: '100%',
             }}
         >
