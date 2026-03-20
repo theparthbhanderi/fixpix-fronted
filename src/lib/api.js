@@ -10,7 +10,7 @@
 
 // Base API URL from environment variable
 // Fallback: Use Railway URL in production, localhost in development
-let rawApiUrl = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://fixpix-backend-production-b99b.up.railway.app' : 'http://localhost:8000');
+let rawApiUrl = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://fixpix-backend-production.up.railway.app' : 'http://localhost:8000');
 
 // Ensure URL starts with http:// or https://
 if (rawApiUrl && !rawApiUrl.startsWith('http')) {
