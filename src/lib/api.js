@@ -9,8 +9,8 @@
  */
 
 // Base API URL from environment variable
-// Fallback: Use Render URL in production, localhost in development
-export const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://fixpix-backend.onrender.com' : 'http://localhost:8000');
+// Fallback: Use Railway URL in production, localhost in development
+export const API_URL = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? 'https://fixpix-backend-production.up.railway.app' : 'http://localhost:8000');
 
 // Media URL (for serving uploaded/processed images)
 export const MEDIA_URL = import.meta.env.VITE_MEDIA_URL || API_URL;
